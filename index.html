@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aileen Naa Ayele Aryeetey — UI/UX Designer & Product Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+e </head>
+<body>
+
+<!-- ========== CURSOR ========== -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ========== NAV ========== -->
+<nav id="nav">
+    <a href="#home" class="nav-logo">Aileen Aryeetey</a>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-ham" id="ham" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+<nav class="nav-mobile" id="mobileNav">
+    <a href="#home"          onclick="closeMobileNav()">Home</a>
+    <a href="#work"          onclick="closeMobileNav()">Work</a>
+    <a href="#case-studies"  onclick="closeMobileNav()">Case Studies</a>
+    <a href="#about"         onclick="closeMobileNav()">About</a>
+    <a href="#contact"       onclick="closeMobileNav()">Contact</a>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="home">
+    <div class="hero-ambient parallax-bg" data-speed="0.25"></div>
+    <div class="hero-grain"></div>
+
+    <div class="hero-left">
+        <div class="hero-eyebrow">UI/UX Designer &amp; Product Builder</div>
+        <h1 class="hero-name">
+            Aileen<br>
+            <span class="italic-gold">Naa Ayele</span><br>
+            Aryeetey
+        </h1>
+        <p class="hero-sub">Kean University &nbsp;·&nbsp; New Jersey</p>
+        <blockquote class="hero-tagline">
+            "I don't design screens. I design the feeling you get when everything just works."
+        </blockquote>
+        <div class="hero-cta">
+            <a href="#work" class="btn-gold"><span>View My Work</span></a>
+            <a href="#contact" class="btn-ghost">Get In Touch</a>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-portrait-wrap">
+            <div class="portrait-frame-outer"></div>
+            <div class="portrait-frame-inner"></div>
+            <div class="hero-portrait">
+                <img id="heroImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey"
+                     onerror="document.getElementById('heroImg').style.display='none'; document.getElementById('heroFallback').style.display='flex';">
+                <div class="hero-portrait-fallback" id="heroFallback" style="display:none;">A</div>
+                <div class="hero-portrait-overlay"></div>
+            </div>
+            <div class="hero-badge-wrap">
+                <div class="hero-badge">
+                    <div class="badge-num">3</div>
+                    <div class="badge-lbl">Live Products</div>
+                </div>
+                <div class="hero-badge">
+                    <div class="badge-num">3.4</div>
+                    <div class="badge-lbl">GPA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span class="scroll-txt">Scroll</span>
+    </div>
+</section>
+
+<!-- ========== WORK ========== -->
+<section id="work">
+    <div class="work-header">
+        <div class="s-label rv">Selected Work</div>
+        <h2 class="s-title rv d1">Things I've <em>Built</em></h2>
+    </div>
+
+    <div class="work-grid">
+
+        <!-- Card 1 — Dear Stranger -->
+        <div class="p-card rv d1">
+            <div class="p-iframe-wrap">
+                <iframe src="https://dearstranger.xyz"
+                        title="Dear Stranger live preview"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                        scrolling="no"
+                        tabindex="-1"></iframe>
+            </div>
+            <div class="p-fallback" style="background:linear-gradient(145deg,#0d0b14 0%,#1a0e1e 40%,#0a1a14 100%);"></div>
+            <div class="p-overlay"></div>
+            <div class="p-content">
+                <div class="p-num">01 / Full Stack</div>
+                <h3 class="p-title">Dear Stranger</h3>
+                <p class="p-blurb">A social letter writing app. Dark space aesthetic, gold accents, interactive star map of real users.</p>
+                <div class="p-tags">
+                    <span class="p-tag">React</span>
+                    <span class="p-tag">Next.js</span>
+                    <span class="p-tag">TypeScript</span>
+                    <span class="p-tag">Supabase</span>
+                    <span class="p-tag">OpenAI</span>
+                    <span class="p-tag">Framer Motion</span>
+                </div>
+                <a href="https://dearstranger.xyz" class="p-link" target="_blank" rel="noopener">
+                    Visit Site <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 2 — DAS Training -->
+        <div class="p-card rv d2">
+            <div class="p-iframe-wrap">
+                <iframe src="https://dascstraining.com"
+                        title="DAS Sterile Training Center live preview"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                        scrolling="no"
+                        tabindex="-1"></iframe>
+            </div>
+            <div class="p-fallback" style="background:linear-gradient(145deg,#0b1620 0%,#112030 50%,#0d1820 100%);"></div>
+            <div class="p-overlay"></div>
+            <div class="p-content">
+                <div class="p-num">02 / Client Work</div>
+                <h3 class="p-title">DAS Sterile Training</h3>
+                <p class="p-blurb">Healthcare training company website. Professional, accessible, and CMS-powered for easy client updates.</p>
+                <div class="p-tags">
+                    <span class="p-tag">React</span>
+                    <span class="p-tag">TypeScript</span>
+                    <span class="p-tag">Tailwind CSS</span>
+                    <span class="p-tag">WordPress</span>
+                </div>
+                <a href="https://dascstraining.com" class="p-link" target="_blank" rel="noopener">
+                    Visit Site <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 3 — Gobɛ Hemaa -->
+        <div class="p-card rv d3">
+            <div class="p-iframe-wrap">
+                <iframe src="https://gob3hemaa.vercel.app"
+                        title="Gobɛ Hemaa live preview"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                        scrolling="no"
+                        tabindex="-1"></iframe>
+            </div>
+            <div class="p-fallback" style="background:linear-gradient(145deg,#1a0a00 0%,#2d1200 50%,#1a0800 100%);"></div>
+            <div class="p-overlay"></div>
+            <div class="p-content">
+                <div class="p-num">03 / Full Stack</div>
+                <h3 class="p-title">Gobɛ Hemaa</h3>
+                <p class="p-blurb">Ghanaian food ordering platform. Full payment integration with Paystack, Flutterwave &amp; Hubtel.</p>
+                <div class="p-tags">
+                    <span class="p-tag">REST API</span>
+                    <span class="p-tag">PostgreSQL</span>
+                    <span class="p-tag">Prisma ORM</span>
+                    <span class="p-tag">Paystack</span>
+                    <span class="p-tag">Flutterwave</span>
+                    <span class="p-tag">Hubtel</span>
+                </div>
+                <a href="https://gob3hemaa.vercel.app" class="p-link" target="_blank" rel="noopener">
+                    Visit Site <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="work-strip"></div>
+</section>
+
+<!-- ========== CASE STUDIES ========== -->
+<section id="case-studies">
+    <div class="cs-header">
+        <div class="s-label rv">Deep Dives</div>
+        <h2 class="s-title rv d1">Case <em>Studies</em></h2>
+    </div>
+
+    <div class="cs-list">
+
+        <!-- CS 1 -->
+        <div class="cs-item rv">
+            <div class="cs-trigger" onclick="toggleCS(this)">
+                <span class="cs-idx">01</span>
+                <span class="cs-name">Dear Stranger</span>
+                <div class="cs-right">
+                    <div class="cs-meta">Full Stack<br>2024</div>
+                    <div class="cs-toggle">+</div>
+                </div>
+            </div>
+            <div class="cs-panel">
+                <div class="cs-body">
+                    <div class="cs-desc">
+                        <p>Dear Stranger is a web app I designed and built entirely from scratch — a space for anonymous, heartfelt letters between strangers. The core product challenge was making vulnerability feel safe. The dark space aesthetic wasn't decorative; it created emotional distance that actually lowered the barrier to writing honestly.</p>
+                        <p>The interactive star map was the hardest piece: each floating hub represents a real user, generated from their profile data and positioned in a 2D space using a weighted clustering algorithm. Framer Motion handled the smooth orbital animations. The entire thing had to feel alive without feeling chaotic.</p>
+                        <p>OpenAI integration powers a gentle writing companion — not rewriting letters, but asking the right questions to help users find their own words.</p>
+                    </div>
+                    <div class="cs-sidebar">
+                        <h4>Live Site</h4>
+                        <p><a href="https://dearstranger.xyz" target="_blank" rel="noopener">dearstranger.xyz</a></p>
+                        <h4>Stack</h4>
+                        <div class="cs-stack">
+                            <span class="cs-tag">React</span>
+                            <span class="cs-tag">Next.js</span>
+                            <span class="cs-tag">TypeScript</span>
+                            <span class="cs-tag">Supabase</span>
+                            <span class="cs-tag">OpenAI API</span>
+                            <span class="cs-tag">Framer Motion</span>
+                        </div>
+                        <h4>Role</h4>
+                        <p>Designer + Full Stack Engineer</p>
+                        <h4>Highlights</h4>
+                        <p>Live star map of users · Anonymous letter system · AI writing companion · Dark space UI with gold accents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CS 2 -->
+        <div class="cs-item rv d1">
+            <div class="cs-trigger" onclick="toggleCS(this)">
+                <span class="cs-idx">02</span>
+                <span class="cs-name">DAS Sterile Training</span>
+                <div class="cs-right">
+                    <div class="cs-meta">Client Work<br>2024</div>
+                    <div class="cs-toggle">+</div>
+                </div>
+            </div>
+            <div class="cs-panel">
+                <div class="cs-body">
+                    <div class="cs-desc">
+                        <p>A real client engagement for a healthcare sterile processing training company. The brief was clear: professional, trustworthy, easy to navigate. Healthcare hiring managers needed to quickly verify credentials and find course information — every second of friction costs a potential student.</p>
+                        <p>I led the design and frontend implementation using React and TypeScript, with Tailwind CSS for a clean, consistent UI. The WordPress CMS integration was intentional — the client needed to update content themselves without touching code. I designed a custom WordPress theme that matched the React frontend exactly.</p>
+                        <p>Accessibility was a priority throughout: clear typographic hierarchy, high contrast text, keyboard-navigable course catalog, and mobile-first responsive layouts for students accessing on phone.</p>
+                    </div>
+                    <div class="cs-sidebar">
+                        <h4>Live Site</h4>
+                        <p><a href="https://dascstraining.com" target="_blank" rel="noopener">dascstraining.com</a></p>
+                        <h4>Stack</h4>
+                        <div class="cs-stack">
+                            <span class="cs-tag">React</span>
+                            <span class="cs-tag">TypeScript</span>
+                            <span class="cs-tag">Tailwind CSS</span>
+                            <span class="cs-tag">WordPress</span>
+                        </div>
+                        <h4>Role</h4>
+                        <p>UI/UX Designer + Frontend Engineer</p>
+                        <h4>Highlights</h4>
+                        <p>Client delivery · CMS integration · Accessible design · Mobile-first · Healthcare sector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CS 3 -->
+        <div class="cs-item rv d2">
+            <div class="cs-trigger" onclick="toggleCS(this)">
+                <span class="cs-idx">03</span>
+                <span class="cs-name">Gobɛ Hemaa</span>
+                <div class="cs-right">
+                    <div class="cs-meta">Full Stack<br>2024</div>
+                    <div class="cs-toggle">+</div>
+                </div>
+            </div>
+            <div class="cs-panel">
+                <div class="cs-body">
+                    <div class="cs-desc">
+                        <p>Built for my cousin's Ghanaian food business — a full stack food ordering platform that handles real money and real orders. "Gobɛ" is a beloved Ghanaian dish, and "Hemaa" means queen. The design needed to feel warm, celebratory, and deeply Ghanaian without being a caricature.</p>
+                        <p>The payment integration was the most technically demanding piece. I integrated three payment providers — Paystack, Flutterwave, and Hubtel — to ensure customers could pay regardless of their bank or mobile money provider. All three required separate webhook handlers and different failure-recovery paths.</p>
+                        <p>The REST API was built with PostgreSQL and Prisma ORM. Schema design was critical: orders, items, and payments had to maintain referential integrity even during partial failures. I used database transactions throughout the order creation flow to prevent ghost orders.</p>
+                    </div>
+                    <div class="cs-sidebar">
+                        <h4>Live Site</h4>
+                        <p><a href="https://gob3hemaa.vercel.app" target="_blank" rel="noopener">gob3hemaa.vercel.app</a></p>
+                        <h4>Stack</h4>
+                        <div class="cs-stack">
+                            <span class="cs-tag">REST API</span>
+                            <span class="cs-tag">PostgreSQL</span>
+                            <span class="cs-tag">Prisma ORM</span>
+                            <span class="cs-tag">Paystack</span>
+                            <span class="cs-tag">Flutterwave</span>
+                            <span class="cs-tag">Hubtel</span>
+                        </div>
+                        <h4>Role</h4>
+                        <p>Designer + Full Stack Engineer</p>
+                        <h4>Highlights</h4>
+                        <p>3 payment gateways · Real money orders · DB transactions · Ghanaian cultural design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+
+    <div class="about-img-side rv-l">
+        <div class="about-img-wrap">
+            <div class="about-frame"></div>
+            <div class="about-img-inner">
+                <img id="aboutImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey"
+                     onerror="document.getElementById('aboutImg').style.display='none'; document.getElementById('aboutFallback').style.display='flex';">
+                <div class="about-img-fallback" id="aboutFallback" style="display:none;">A</div>
+            </div>
+            <div class="about-accent">
+                <div class="accent-num">3×</div>
+                <div class="accent-lbl">Dean's List</div>
+            </div>
+            <div class="about-forest-block"></div>
+        </div>
+    </div>
+
+    <div class="about-txt-side rv-r">
+        <div class="s-label left rv">About Me</div>
+        <h2 class="about-intro rv d1">
+            I design directly in code.<br>
+            <em>That's not a workflow — it's a philosophy.</em>
+        </h2>
+        <p class="about-body rv d2">
+            I'm Aileen — a UI/UX Designer and Product Builder studying Information Technology at Kean University. I don't separate design from development because that separation doesn't actually serve users. The feeling of a product lives in the milliseconds between interaction and response, in the weight of a hover state, in the specific curve of a transition.
+        </p>
+        <p class="about-body rv d3">
+            I've shipped 3 live products across social platforms, client work, and e-commerce. I studied abroad at Wenzhou-Kean University in China. I'm the person who will redesign a button three times because the first two felt slightly wrong, and then write the CSS animation for the third one herself.
+        </p>
+
+        <div class="about-facts rv d4">
+            <div class="about-fact">
+                <div class="fact-lbl">University</div>
+                <div class="fact-val">Kean University<br>B.S. Information Technology</div>
+            </div>
+            <div class="about-fact">
+                <div class="fact-lbl">GPA</div>
+                <div class="fact-val">3.4 · Dean's List ×3</div>
+            </div>
+            <div class="about-fact">
+                <div class="fact-lbl">Study Abroad</div>
+                <div class="fact-val">Wenzhou-Kean University<br>China</div>
+            </div>
+            <div class="about-fact">
+                <div class="fact-lbl">Products Shipped</div>
+                <div class="fact-val">3 live products<br>Designed in code</div>
+            </div>
+        </div>
+
+        <a href="#contact" class="btn-gold rv d5"><span>Let's Work Together</span></a>
+    </div>
+
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+    <div class="contact-ambient"></div>
+    <div class="contact-inner">
+        <div class="s-label rv">Say Hello</div>
+        <h2 class="s-title rv d1">Let's Make<br><em>Something</em></h2>
+        <p class="contact-sub rv d2">
+            Open to full-time roles, freelance projects, and interesting conversations.
+        </p>
+
+        <div class="contact-icons rv d3">
+            <a href="mailto:aileenaryeetey.naa@gmail.com" class="c-icon-link">
+                <div class="c-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                </div>
+                <span class="c-icon-lbl">Email</span>
+            </a>
+            <a href="https://github.com/aryeetea" class="c-icon-link" target="_blank" rel="noopener">
+                <div class="c-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </div>
+                <span class="c-icon-lbl">GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/aileen-aryeetey-162033263" class="c-icon-link" target="_blank" rel="noopener">
+                <div class="c-icon">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </div>
+                <span class="c-icon-lbl">LinkedIn</span>
+            </a>
+        </div>
+
+        <a href="mailto:aileenaryeetey.naa@gmail.com" class="contact-email rv d4">
+            aileenaryeetey.naa@gmail.com
+        </a>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <p class="foot-copy">© 2025 Aileen Naa Ayele Aryeetey</p>
+    <p class="foot-quote">"When everything just works."</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
