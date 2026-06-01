@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aileen Naa Ayele Aryeetey — UI/UX Designer & Product Builder</title>
+    <title>Aileen Naa Ayele Aryeetey — UI/UX Designer &amp; Product Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;family=Cinzel:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ========== CURSOR ========== -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- ========== NAV ========== -->
 <nav id="nav">
@@ -25,16 +25,16 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <button type="button" class="nav-ham" id="ham" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
+    <button type="button" class="nav-ham" id="ham" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
         <span></span><span></span><span></span>
     </button>
 </nav>
 <nav class="nav-mobile" id="mobileNav" aria-hidden="true">
-    <a href="#home"          onclick="closeMobileNav()">Home</a>
-    <a href="#work"          onclick="closeMobileNav()">Work</a>
-    <a href="#case-studies"  onclick="closeMobileNav()">Case Studies</a>
-    <a href="#about"         onclick="closeMobileNav()">About</a>
-    <a href="#contact"       onclick="closeMobileNav()">Contact</a>
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#work" class="mobile-nav-link">Work</a>
+    <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
 </nav>
 
 <!-- ========== HERO ========== -->
@@ -64,9 +64,8 @@
             <div class="portrait-frame-outer"></div>
             <div class="portrait-frame-inner"></div>
             <div class="hero-portrait">
-                <img id="heroImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey"
-                     onerror="document.getElementById('heroImg').style.display='none'; document.getElementById('heroFallback').style.display='flex';">
-                <div class="hero-portrait-fallback" id="heroFallback" style="display:none;">A</div>
+                <img id="heroImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey">
+                <div class="hero-portrait-fallback" id="heroFallback" hidden>A</div>
                 <div class="hero-portrait-overlay"></div>
             </div>
             <div class="hero-badge-wrap">
@@ -206,15 +205,15 @@
 
         <!-- CS 1 -->
         <div class="cs-item rv open">
-            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="true">
+            <button type="button" class="cs-trigger" aria-expanded="true" aria-controls="cs-panel-1">
                 <span class="cs-idx">01</span>
                 <span class="cs-name">Dear Stranger</span>
                 <div class="cs-right">
                     <div class="cs-meta">Full Stack<br>2024</div>
                     <div class="cs-toggle">+</div>
                 </div>
-            </div>
-            <div class="cs-panel">
+            </button>
+            <div class="cs-panel" id="cs-panel-1">
                 <div class="cs-body">
                     <div class="cs-desc">
                         <div class="cs-summary">
@@ -289,15 +288,15 @@
 
         <!-- CS 2 -->
         <div class="cs-item rv d1">
-            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="false">
+            <button type="button" class="cs-trigger" aria-expanded="false" aria-controls="cs-panel-2">
                 <span class="cs-idx">02</span>
                 <span class="cs-name">DAS Sterile Training</span>
                 <div class="cs-right">
                     <div class="cs-meta">Client Work<br>2024</div>
                     <div class="cs-toggle">+</div>
                 </div>
-            </div>
-            <div class="cs-panel">
+            </button>
+            <div class="cs-panel" id="cs-panel-2">
                 <div class="cs-body">
                     <div class="cs-desc">
                         <div class="cs-summary">
@@ -370,15 +369,15 @@
 
         <!-- CS 3 -->
         <div class="cs-item rv d2">
-            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="false">
+            <button type="button" class="cs-trigger" aria-expanded="false" aria-controls="cs-panel-3">
                 <span class="cs-idx">03</span>
                 <span class="cs-name">Gobɛ Hemaa</span>
                 <div class="cs-right">
                     <div class="cs-meta">Full Stack<br>2024</div>
                     <div class="cs-toggle">+</div>
                 </div>
-            </div>
-            <div class="cs-panel">
+            </button>
+            <div class="cs-panel" id="cs-panel-3">
                 <div class="cs-body">
                     <div class="cs-desc">
                         <div class="cs-summary">
@@ -461,9 +460,8 @@
         <div class="about-img-wrap">
             <div class="about-frame"></div>
             <div class="about-img-inner">
-                <img id="aboutImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey"
-                     onerror="document.getElementById('aboutImg').style.display='none'; document.getElementById('aboutFallback').style.display='flex';">
-                <div class="about-img-fallback" id="aboutFallback" style="display:none;">A</div>
+                <img id="aboutImg" src="photo.jpg" alt="Aileen Naa Ayele Aryeetey">
+                <div class="about-img-fallback" id="aboutFallback" hidden>A</div>
             </div>
             <div class="about-accent">
                 <div class="accent-num">3×</div>

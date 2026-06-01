@@ -62,6 +62,7 @@ window.addEventListener('scroll', () => {
 ================================================ */
 const ham = document.getElementById('ham');
 const mobileNav = document.getElementById('mobileNav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
 function toggleMobileNav() {
     const isOpen = mobileNav.classList.toggle('open');
@@ -75,6 +76,9 @@ function closeMobileNav() {
     mobileNav.setAttribute('aria-hidden', 'true');
     ham.setAttribute('aria-label', 'Open navigation menu');
 }
+
+ham.addEventListener('click', toggleMobileNav);
+mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileNav));
 
 /* ================================================
    SCROLL REVEAL (IntersectionObserver)
@@ -105,20 +109,21 @@ function toggleCS(trigger) {
     document.querySelectorAll('.cs-item').forEach(i => {
         i.classList.remove('open');
         i.querySelector('.cs-trigger')?.setAttribute('aria-expanded', 'false');
+        i.querySelector('.cs-panel')?.setAttribute('aria-hidden', 'true');
     });
     if (!isOpen) {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
+        item.querySelector('.cs-panel')?.setAttribute('aria-hidden', 'false');
     }
 }
 
 document.querySelectorAll('.cs-trigger').forEach(trigger => {
-    trigger.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleCS(trigger);
-        }
-    });
+    trigger.addEventListener('click', () => toggleCS(trigger));
+});
+
+document.querySelectorAll('.cs-item').forEach(item => {
+    item.querySelector('.cs-panel')?.setAttribute('aria-hidden', item.classList.contains('open') ? 'false' : 'true');
 });
 
 /* ================================================
@@ -138,6 +143,22 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMobileNav();
+});
+
+[
+    ['heroImg', 'heroFallback'],
+    ['aboutImg', 'aboutFallback']
+].forEach(([imgId, fallbackId]) => {
+    const img = document.getElementById(imgId);
+    const fallback = document.getElementById(fallbackId);
+
+    if (!img || !fallback) return;
+
+    img.addEventListener('error', () => {
+        img.hidden = true;
+        fallback.hidden = false;
+        fallback.style.display = 'flex';
+    });
 });
 
 /* ================================================
