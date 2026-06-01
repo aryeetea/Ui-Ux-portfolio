@@ -1,68 +1,11 @@
-/* ================================================
-   CURSOR
-================================================ */
-const cur  = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = window.innerWidth / 2;
-let my = window.innerHeight / 2;
-let rx = mx, ry = my;
-
-document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    cur.style.left = mx + 'px';
-    cur.style.top  = my + 'px';
-});
-
-(function animRing() {
-    rx += (mx - rx) * 0.11;
-    ry += (my - ry) * 0.11;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(animRing);
-})();
-
-// hover targets
-document.querySelectorAll('a, button, .p-card, .cs-trigger').forEach(el => {
-    el.addEventListener('mouseenter', () => { cur.classList.add('hovered'); ring.classList.add('hovered'); });
-    el.addEventListener('mouseleave', () => { cur.classList.remove('hovered'); ring.classList.remove('hovered'); });
-});
-
-// dark section cursor tint
-const darkSections = document.querySelectorAll('#home, #case-studies, #contact, footer');
-const onDarkObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            cur.classList.add('on-dark');
-            ring.classList.add('on-dark');
-        } else {
-            const anyDark = [...darkSections].some(s => {
-                const r = s.getBoundingClientRect();
-                return r.top < window.innerHeight / 2 && r.bottom > window.innerHeight / 2;
-            });
-            if (!anyDark) {
-                cur.classList.remove('on-dark');
-                ring.classList.remove('on-dark');
-            }
-        }
-    });
-}, { threshold: 0.4 });
-darkSections.forEach(s => onDarkObserver.observe(s));
-
-/* ================================================
-   NAV SCROLL
-================================================ */
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 70);
-}, { passive: true });
-
-/* ================================================
-   MOBILE NAV
-================================================ */
 const ham = document.getElementById('ham');
 const mobileNav = document.getElementById('mobileNav');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 16);
+}, { passive: true });
 
 function toggleMobileNav() {
     const isOpen = mobileNav.classList.toggle('open');
@@ -70,6 +13,7 @@ function toggleMobileNav() {
     mobileNav.setAttribute('aria-hidden', String(!isOpen));
     ham.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
 }
+
 function closeMobileNav() {
     mobileNav.classList.remove('open');
     ham.setAttribute('aria-expanded', 'false');
@@ -78,39 +22,30 @@ function closeMobileNav() {
 }
 
 ham.addEventListener('click', toggleMobileNav);
-mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileNav));
+mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
 
-/* ================================================
-   SCROLL REVEAL (IntersectionObserver)
-================================================ */
-const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('in');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+        }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revealObs.observe(el));
+document.querySelectorAll('.rv, .rv-l, .rv-r').forEach((element) => {
+    revealObserver.observe(element);
+});
 
-/* ================================================
-   PARALLAX
-================================================ */
-const parallaxBg = document.querySelector('.parallax-bg');
-window.addEventListener('scroll', () => {
-    if (!parallaxBg) return;
-    parallaxBg.style.transform = `translateY(${window.scrollY * 0.22}px)`;
-}, { passive: true });
-
-/* ================================================
-   CASE STUDY ACCORDION
-================================================ */
-function toggleCS(trigger) {
-    const item   = trigger.closest('.cs-item');
+function toggleCaseStudy(trigger) {
+    const item = trigger.closest('.cs-item');
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.cs-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.cs-trigger')?.setAttribute('aria-expanded', 'false');
-        i.querySelector('.cs-panel')?.setAttribute('aria-hidden', 'true');
+
+    document.querySelectorAll('.cs-item').forEach((entry) => {
+        entry.classList.remove('open');
+        entry.querySelector('.cs-trigger')?.setAttribute('aria-expanded', 'false');
+        entry.querySelector('.cs-panel')?.setAttribute('aria-hidden', 'true');
     });
+
     if (!isOpen) {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
@@ -118,69 +53,71 @@ function toggleCS(trigger) {
     }
 }
 
-document.querySelectorAll('.cs-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => toggleCS(trigger));
+document.querySelectorAll('.cs-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => toggleCaseStudy(trigger));
 });
 
-document.querySelectorAll('.cs-item').forEach(item => {
-    item.querySelector('.cs-panel')?.setAttribute('aria-hidden', item.classList.contains('open') ? 'false' : 'true');
+document.querySelectorAll('.cs-item').forEach((item) => {
+    const panel = item.querySelector('.cs-panel');
+    panel?.setAttribute('aria-hidden', item.classList.contains('open') ? 'false' : 'true');
 });
 
-/* ================================================
-   SMOOTH SCROLL (anchor links)
-================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') {
+            return;
         }
+
+        const target = document.querySelector(href);
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeMobileNav();
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeMobileNav();
+    }
 });
 
 [
     ['heroImg', 'heroFallback'],
     ['aboutImg', 'aboutFallback']
 ].forEach(([imgId, fallbackId]) => {
-    const img = document.getElementById(imgId);
+    const image = document.getElementById(imgId);
     const fallback = document.getElementById(fallbackId);
 
-    if (!img || !fallback) return;
+    if (!image || !fallback) {
+        return;
+    }
 
-    img.addEventListener('error', () => {
-        img.hidden = true;
+    image.addEventListener('error', () => {
+        image.hidden = true;
         fallback.hidden = false;
-        fallback.style.display = 'flex';
     });
 });
 
-/* ================================================
-   IFRAME LOAD FALLBACKS
-   Sites that block framing will show a gradient
-================================================ */
-document.querySelectorAll('.p-card').forEach(card => {
-    const iframe   = card.querySelector('iframe');
-    const fallback = card.querySelector('.p-fallback');
+document.querySelectorAll('.project-card').forEach((card) => {
+    const iframe = card.querySelector('iframe');
+    const fallback = card.querySelector('.project-fallback');
 
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
         try {
-            if (!iframe.contentDocument || iframe.contentDocument.body.innerHTML === '') {
-                fallback.classList.add('show');
+            if (!iframe?.contentDocument || iframe.contentDocument.body.innerHTML === '') {
+                fallback?.classList.add('show');
             }
-        } catch(err) {
-            // cross-origin — iframe loaded fine, leave it alone
+        } catch (error) {
+            // Cross-origin access means the preview likely loaded fine.
         }
     }, 6000);
 
-    iframe.addEventListener('error', () => {
-        clearTimeout(timer);
-        fallback.classList.add('show');
+    iframe?.addEventListener('error', () => {
+        window.clearTimeout(timer);
+        fallback?.classList.add('show');
     });
 });
