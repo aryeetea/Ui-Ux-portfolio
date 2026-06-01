@@ -25,11 +25,11 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-ham" id="ham" onclick="toggleMobileNav()">
+    <button type="button" class="nav-ham" id="ham" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
         <span></span><span></span><span></span>
-    </div>
+    </button>
 </nav>
-<nav class="nav-mobile" id="mobileNav">
+<nav class="nav-mobile" id="mobileNav" aria-hidden="true">
     <a href="#home"          onclick="closeMobileNav()">Home</a>
     <a href="#work"          onclick="closeMobileNav()">Work</a>
     <a href="#case-studies"  onclick="closeMobileNav()">Case Studies</a>
@@ -199,8 +199,8 @@
     <div class="cs-list">
 
         <!-- CS 1 -->
-        <div class="cs-item rv">
-            <div class="cs-trigger" onclick="toggleCS(this)">
+        <div class="cs-item rv open">
+            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="true">
                 <span class="cs-idx">01</span>
                 <span class="cs-name">Dear Stranger</span>
                 <div class="cs-right">
@@ -211,11 +211,58 @@
             <div class="cs-panel">
                 <div class="cs-body">
                     <div class="cs-desc">
-                        <p>Dear Stranger is a web app I designed and built entirely from scratch — a space for anonymous, heartfelt letters between strangers. The core product challenge was making vulnerability feel safe. The dark space aesthetic wasn't decorative; it created emotional distance that actually lowered the barrier to writing honestly.</p>
-                        <p>The interactive star map was the hardest piece: each floating hub represents a real user, generated from their profile data and positioned in a 2D space using a weighted clustering algorithm. Framer Motion handled the smooth orbital animations. The entire thing had to feel alive without feeling chaotic.</p>
-                        <p>OpenAI integration powers a gentle writing companion — not rewriting letters, but asking the right questions to help users find their own words.</p>
+                        <div class="cs-summary">
+                            <p class="cs-lead">An anonymous letter-writing product designed to make emotional honesty feel safe, intimate, and unexpectedly beautiful.</p>
+                            <p>The goal was not just to build a functional social platform. It was to design a digital atmosphere where strangers would trust the interface enough to say something real. That meant every product decision, from the first screen to the send flow, had to reduce emotional friction.</p>
+                        </div>
+
+                        <div class="cs-metrics">
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">North Star</span>
+                                <span class="cs-metric-label">Make vulnerability feel safe</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Core Flow</span>
+                                <span class="cs-metric-label">Discover, write, send, reflect</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Key Constraint</span>
+                                <span class="cs-metric-label">High emotion, low overwhelm</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-sections">
+                            <article class="cs-block">
+                                <h4>The Problem</h4>
+                                <p>Most anonymous platforms feel unsafe because anonymity is usually paired with chaos. I needed to reverse that pattern and create a product where emotional distance felt calming instead of risky.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>My Approach</h4>
+                                <p>I built the visual system around quiet contrast: deep space backgrounds, restrained gold accents, soft motion, and deliberate pacing. The product language avoids pressure and makes the act of writing feel ceremonial rather than performative.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Interaction Design</h4>
+                                <p>The star map was designed as both discovery mechanism and emotional metaphor. Real users become constellations, which turns browsing into a reflective experience instead of a crowded feed. Motion was tuned to feel alive but never noisy.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>AI Decision</h4>
+                                <p>The OpenAI-assisted writing companion does not take over authorship. It prompts reflection, helps users continue when they feel stuck, and protects the personal quality of the letter instead of flattening it into generic text.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Outcome</h4>
+                                <p>The final product feels emotionally distinct from traditional social apps. It combines product design, frontend craft, and systems thinking into an experience where the atmosphere is part of the usability.</p>
+                            </article>
+                        </div>
                     </div>
                     <div class="cs-sidebar">
+                        <div class="cs-aside-card">
+                            <h4>Project Snapshot</h4>
+                            <div class="cs-facts">
+                                <div><span>Role</span><strong>Product Designer + Full Stack Engineer</strong></div>
+                                <div><span>Focus</span><strong>Emotional UX, discovery, AI support</strong></div>
+                                <div><span>Built With</span><strong>React, Next.js, Supabase, OpenAI</strong></div>
+                            </div>
+                        </div>
                         <h4>Live Site</h4>
                         <p><a href="https://dearstranger.xyz" target="_blank" rel="noopener">dearstranger.xyz</a></p>
                         <h4>Stack</h4>
@@ -227,10 +274,8 @@
                             <span class="cs-tag">OpenAI API</span>
                             <span class="cs-tag">Framer Motion</span>
                         </div>
-                        <h4>Role</h4>
-                        <p>Designer + Full Stack Engineer</p>
-                        <h4>Highlights</h4>
-                        <p>Live star map of users · Anonymous letter system · AI writing companion · Dark space UI with gold accents</p>
+                        <h4>Design Decisions</h4>
+                        <p>Dark visual atmosphere, slow orbital motion, reflective empty states, and low-pressure writing prompts.</p>
                     </div>
                 </div>
             </div>
@@ -238,7 +283,7 @@
 
         <!-- CS 2 -->
         <div class="cs-item rv d1">
-            <div class="cs-trigger" onclick="toggleCS(this)">
+            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="false">
                 <span class="cs-idx">02</span>
                 <span class="cs-name">DAS Sterile Training</span>
                 <div class="cs-right">
@@ -249,11 +294,58 @@
             <div class="cs-panel">
                 <div class="cs-body">
                     <div class="cs-desc">
-                        <p>A real client engagement for a healthcare sterile processing training company. The brief was clear: professional, trustworthy, easy to navigate. Healthcare hiring managers needed to quickly verify credentials and find course information — every second of friction costs a potential student.</p>
-                        <p>I led the design and frontend implementation using React and TypeScript, with Tailwind CSS for a clean, consistent UI. The WordPress CMS integration was intentional — the client needed to update content themselves without touching code. I designed a custom WordPress theme that matched the React frontend exactly.</p>
-                        <p>Accessibility was a priority throughout: clear typographic hierarchy, high contrast text, keyboard-navigable course catalog, and mobile-first responsive layouts for students accessing on phone.</p>
+                        <div class="cs-summary">
+                            <p class="cs-lead">A healthcare training site redesigned around clarity, trust, and client autonomy instead of visual clutter.</p>
+                            <p>This project served a real business with real operational pressure: prospective students needed to quickly understand offerings, trust the organization, and take action, while the client needed a site they could confidently maintain after handoff.</p>
+                        </div>
+
+                        <div class="cs-metrics">
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">North Star</span>
+                                <span class="cs-metric-label">Trust at first glance</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Core Flow</span>
+                                <span class="cs-metric-label">Learn, verify, enroll</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Key Constraint</span>
+                                <span class="cs-metric-label">Easy client updates after launch</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-sections">
+                            <article class="cs-block">
+                                <h4>The Problem</h4>
+                                <p>Healthcare audiences do not reward visual experimentation that creates doubt. The challenge was to make the brand feel credible and polished while still giving the client a modern web presence that did not feel generic.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Information Architecture</h4>
+                                <p>I prioritized quick wayfinding: course information, certification credibility, and contact paths needed to surface early. The structure was designed so hiring managers and students could each reach their goals without scanning unnecessary content.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Design System</h4>
+                                <p>The UI direction leans clean and disciplined: strong type hierarchy, generous white space, accessible contrast, and components that reinforce professionalism rather than decoration. The visual confidence comes from restraint.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>CMS Strategy</h4>
+                                <p>I paired the frontend with WordPress intentionally so the client could manage updates independently. The design had to be flexible enough for edited content without breaking the visual rhythm or layout quality.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Outcome</h4>
+                                <p>The finished site supports both perception and operations: it feels established to visitors and practical to the client, which is the kind of product thinking that makes a site useful after launch, not just during presentation.</p>
+                            </article>
+                        </div>
                     </div>
                     <div class="cs-sidebar">
+                        <div class="cs-aside-card">
+                            <h4>Project Snapshot</h4>
+                            <div class="cs-facts">
+                                <div><span>Role</span><strong>UI/UX Designer + Frontend Engineer</strong></div>
+                                <div><span>Focus</span><strong>Trust, accessibility, client editing</strong></div>
+                                <div><span>Built With</span><strong>React, TypeScript, Tailwind, WordPress</strong></div>
+                            </div>
+                        </div>
                         <h4>Live Site</h4>
                         <p><a href="https://dascstraining.com" target="_blank" rel="noopener">dascstraining.com</a></p>
                         <h4>Stack</h4>
@@ -263,10 +355,8 @@
                             <span class="cs-tag">Tailwind CSS</span>
                             <span class="cs-tag">WordPress</span>
                         </div>
-                        <h4>Role</h4>
-                        <p>UI/UX Designer + Frontend Engineer</p>
-                        <h4>Highlights</h4>
-                        <p>Client delivery · CMS integration · Accessible design · Mobile-first · Healthcare sector</p>
+                        <h4>Design Decisions</h4>
+                        <p>Simple navigation, strong hierarchy, conversion-forward layouts, and a CMS-friendly component structure.</p>
                     </div>
                 </div>
             </div>
@@ -274,7 +364,7 @@
 
         <!-- CS 3 -->
         <div class="cs-item rv d2">
-            <div class="cs-trigger" onclick="toggleCS(this)">
+            <div class="cs-trigger" onclick="toggleCS(this)" role="button" tabindex="0" aria-expanded="false">
                 <span class="cs-idx">03</span>
                 <span class="cs-name">Gobɛ Hemaa</span>
                 <div class="cs-right">
@@ -285,11 +375,58 @@
             <div class="cs-panel">
                 <div class="cs-body">
                     <div class="cs-desc">
-                        <p>Built for my cousin's Ghanaian food business — a full stack food ordering platform that handles real money and real orders. "Gobɛ" is a beloved Ghanaian dish, and "Hemaa" means queen. The design needed to feel warm, celebratory, and deeply Ghanaian without being a caricature.</p>
-                        <p>The payment integration was the most technically demanding piece. I integrated three payment providers — Paystack, Flutterwave, and Hubtel — to ensure customers could pay regardless of their bank or mobile money provider. All three required separate webhook handlers and different failure-recovery paths.</p>
-                        <p>The REST API was built with PostgreSQL and Prisma ORM. Schema design was critical: orders, items, and payments had to maintain referential integrity even during partial failures. I used database transactions throughout the order creation flow to prevent ghost orders.</p>
+                        <div class="cs-summary">
+                            <p class="cs-lead">A culturally rooted food-ordering experience designed to feel warm, trustworthy, and operationally reliable under real payment conditions.</p>
+                            <p>This was more than a restaurant landing page. It needed to support active ordering, multiple payment behaviors, and the emotional layer of representing Ghanaian food culture with pride instead of flattening it into a generic delivery UI.</p>
+                        </div>
+
+                        <div class="cs-metrics">
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">North Star</span>
+                                <span class="cs-metric-label">Celebrate culture without sacrificing usability</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Core Flow</span>
+                                <span class="cs-metric-label">Browse, customize, pay, confirm</span>
+                            </div>
+                            <div class="cs-metric">
+                                <span class="cs-metric-value">Key Constraint</span>
+                                <span class="cs-metric-label">Real transactions across multiple gateways</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-sections">
+                            <article class="cs-block">
+                                <h4>The Problem</h4>
+                                <p>Food ordering products often default to bland sameness. Here, the challenge was to design something that felt unmistakably Ghanaian while still being legible, fast, and familiar enough for customers to trust with payment.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Brand Translation</h4>
+                                <p>I used warmth, rich color, and celebratory language to express the personality of the brand, but kept the interface structure disciplined. Cultural expression lives in tone, palette, and product storytelling, not in clutter.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Checkout Complexity</h4>
+                                <p>The core systems challenge was payment resilience. I integrated Paystack, Flutterwave, and Hubtel so customers had options across different banking and mobile money contexts, each with its own success and failure states.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Backend Design</h4>
+                                <p>The data model had to protect order integrity. Orders, payments, and line items were coordinated through transactions so partial failures would not create ghost purchases or ambiguous payment records.</p>
+                            </article>
+                            <article class="cs-block">
+                                <h4>Outcome</h4>
+                                <p>The final product balances identity and infrastructure. It feels specific to the business it serves, while still handling the serious, less visible work of checkout trust, state management, and payment reliability.</p>
+                            </article>
+                        </div>
                     </div>
                     <div class="cs-sidebar">
+                        <div class="cs-aside-card">
+                            <h4>Project Snapshot</h4>
+                            <div class="cs-facts">
+                                <div><span>Role</span><strong>Designer + Full Stack Engineer</strong></div>
+                                <div><span>Focus</span><strong>E-commerce UX, cultural brand expression</strong></div>
+                                <div><span>Built With</span><strong>REST API, PostgreSQL, Prisma, 3 gateways</strong></div>
+                            </div>
+                        </div>
                         <h4>Live Site</h4>
                         <p><a href="https://gob3hemaa.vercel.app" target="_blank" rel="noopener">gob3hemaa.vercel.app</a></p>
                         <h4>Stack</h4>
@@ -301,10 +438,8 @@
                             <span class="cs-tag">Flutterwave</span>
                             <span class="cs-tag">Hubtel</span>
                         </div>
-                        <h4>Role</h4>
-                        <p>Designer + Full Stack Engineer</p>
-                        <h4>Highlights</h4>
-                        <p>3 payment gateways · Real money orders · DB transactions · Ghanaian cultural design</p>
+                        <h4>Design Decisions</h4>
+                        <p>Warm visual language, familiar ordering patterns, multiple payment options, and guarded backend state transitions.</p>
                     </div>
                 </div>
             </div>
@@ -380,7 +515,7 @@
         </p>
 
         <div class="contact-icons rv d3">
-            <a href="mailto:aileenaryeetey.naa@gmail.com" class="c-icon-link">
+            <a href="mailto:aileenaryeetey.naa@gmail.com" class="c-icon-link" aria-label="Email Aileen">
                 <div class="c-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -389,7 +524,7 @@
                 </div>
                 <span class="c-icon-lbl">Email</span>
             </a>
-            <a href="https://github.com/aryeetea" class="c-icon-link" target="_blank" rel="noopener">
+            <a href="https://github.com/aryeetea" class="c-icon-link" target="_blank" rel="noopener" aria-label="Visit Aileen's GitHub profile">
                 <div class="c-icon">
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
@@ -397,7 +532,7 @@
                 </div>
                 <span class="c-icon-lbl">GitHub</span>
             </a>
-            <a href="https://linkedin.com/in/aileen-aryeetey-162033263" class="c-icon-link" target="_blank" rel="noopener">
+            <a href="https://linkedin.com/in/aileen-aryeetey-162033263" class="c-icon-link" target="_blank" rel="noopener" aria-label="Visit Aileen's LinkedIn profile">
                 <div class="c-icon">
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -415,7 +550,7 @@
 
 <!-- ========== FOOTER ========== -->
 <footer>
-    <p class="foot-copy">© 2025 Aileen Naa Ayele Aryeetey</p>
+    <p class="foot-copy">© 2026 Aileen Naa Ayele Aryeetey</p>
     <p class="foot-quote">"When everything just works."</p>
 </footer>
 

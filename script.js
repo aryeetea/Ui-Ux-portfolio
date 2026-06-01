@@ -60,11 +60,20 @@ window.addEventListener('scroll', () => {
 /* ================================================
    MOBILE NAV
 ================================================ */
+const ham = document.getElementById('ham');
+const mobileNav = document.getElementById('mobileNav');
+
 function toggleMobileNav() {
-    document.getElementById('mobileNav').classList.toggle('open');
+    const isOpen = mobileNav.classList.toggle('open');
+    ham.setAttribute('aria-expanded', String(isOpen));
+    mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    ham.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
 }
 function closeMobileNav() {
-    document.getElementById('mobileNav').classList.remove('open');
+    mobileNav.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    ham.setAttribute('aria-label', 'Open navigation menu');
 }
 
 /* ================================================
@@ -93,9 +102,24 @@ window.addEventListener('scroll', () => {
 function toggleCS(trigger) {
     const item   = trigger.closest('.cs-item');
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.cs-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+    document.querySelectorAll('.cs-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.cs-trigger')?.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+    }
 }
+
+document.querySelectorAll('.cs-trigger').forEach(trigger => {
+    trigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleCS(trigger);
+        }
+    });
+});
 
 /* ================================================
    SMOOTH SCROLL (anchor links)
@@ -112,9 +136,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMobileNav();
+});
+
 /* ================================================
    IFRAME LOAD FALLBACKS
-   Sites that block iframing will show a gradient
+   Sites that block framing will show a gradient
 ================================================ */
 document.querySelectorAll('.p-card').forEach(card => {
     const iframe   = card.querySelector('iframe');
@@ -135,4 +163,3 @@ document.querySelectorAll('.p-card').forEach(card => {
         fallback.classList.add('show');
     });
 });
-
