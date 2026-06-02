@@ -23,12 +23,13 @@ if (vaultScreen) {
 if (showClosetDirectly && vaultScreen && archiveScreen) {
     vaultScreen.hidden = true;
     archiveScreen.hidden = false;
-    document.body.classList.remove('is-locked');
 }
 
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+if (nav) {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+}
 
 function toggleMobileNav() {
     const isOpen = mobileNav.classList.toggle('open');
@@ -44,7 +45,7 @@ function closeMobileNav() {
     ham.setAttribute('aria-label', 'Open navigation menu');
 }
 
-ham.addEventListener('click', toggleMobileNav);
+ham?.addEventListener('click', toggleMobileNav);
 mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
 
 function openVaultPanel() {
@@ -77,7 +78,6 @@ function unlockPortfolio() {
     window.setTimeout(() => {
         vaultScreen.hidden = true;
         archiveScreen.hidden = false;
-        document.body.classList.remove('is-locked');
     }, reduceMotion ? 0 : 850);
 }
 
@@ -87,7 +87,6 @@ function openArchiveTarget(path) {
     }
 
     archiveScreen.classList.add('is-hidden');
-    document.body.classList.remove('is-locked');
 
     window.setTimeout(() => {
         window.location.href = path;
