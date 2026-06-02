@@ -2,9 +2,12 @@ const nav = document.getElementById('nav');
 const ham = document.getElementById('ham');
 const mobileNav = document.getElementById('mobileNav');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 16);
+    nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
 function toggleMobileNav() {
@@ -23,6 +26,41 @@ function closeMobileNav() {
 
 ham.addEventListener('click', toggleMobileNav);
 mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
+
+if (!reduceMotion && cursor && cursorRing && window.innerWidth > 768) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    document.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        cursor.style.left = `${mouseX}px`;
+        cursor.style.top = `${mouseY}px`;
+    });
+
+    const animateRing = () => {
+        ringX += (mouseX - ringX) * 0.14;
+        ringY += (mouseY - ringY) * 0.14;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+        requestAnimationFrame(animateRing);
+    };
+
+    animateRing();
+
+    document.querySelectorAll('a, button, .project-card, .cs-item, .mini-card, .about-grid article').forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hovered');
+            cursorRing.classList.add('hovered');
+        });
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hovered');
+            cursorRing.classList.remove('hovered');
+        });
+    });
+}
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -85,20 +123,16 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-[
-    ['heroImg', 'heroFallback'],
-    ['aboutImg', 'aboutFallback']
-].forEach(([imgId, fallbackId]) => {
-    const image = document.getElementById(imgId);
-    const fallback = document.getElementById(fallbackId);
-
-    if (!image || !fallback) {
-        return;
-    }
+document.querySelectorAll('.profile-photo').forEach((image, index) => {
+    const fallback = index === 0
+        ? document.getElementById('heroFallback')
+        : document.getElementById('aboutFallback');
 
     image.addEventListener('error', () => {
         image.hidden = true;
-        fallback.hidden = false;
+        if (fallback) {
+            fallback.hidden = false;
+        }
     });
 });
 
@@ -121,3 +155,24 @@ document.querySelectorAll('.project-card').forEach((card) => {
         fallback?.classList.add('show');
     });
 });
+
+if (!reduceMotion) {
+    const parallaxElements = document.querySelectorAll('.page-glow, .portrait-card, .about-photo-card');
+    let ticking = false;
+
+    const updateParallax = () => {
+        const scrollY = window.scrollY;
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.03 + index * 0.02;
+            element.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }, { passive: true });
+}
