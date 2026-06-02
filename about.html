@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Aileen Naa Ayele Aryeetey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-about">
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div class="page-glow page-glow-one" aria-hidden="true"></div>
+<div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+<nav id="nav">
+    <a href="home.html" class="nav-logo">
+        <span class="nav-logo-mark">AA</span>
+        <span class="nav-logo-text">Aileen Aryeetey</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Closet</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-ham" id="ham" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="work.html" class="mobile-nav-link">Work</a>
+    <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+</nav>
+
+<main>
+    <section class="return-strip" data-section="return">
+        <a href="index.html" class="return-link">Back to Closet</a>
+    </section>
+    <section id="about" data-section="about.md">
+        <div class="about-copy rv">
+            <span class="section-kicker">About Me</span>
+            <h2>I design directly in code, which means what I imagine is exactly what ships.</h2>
+            <p>I am Aileen — a recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I care deeply about the details that most people skip: micro interactions, spacing, and the moment right before something clicks.</p>
+            <p>Unlike most designers, I can build what I design. No handoff, no gap, just the thing itself shaped carefully from vision to implementation.</p>
+            <div class="about-grid">
+                <article data-card="education">
+                    <span>Education</span>
+                    <strong>Kean University</strong>
+                </article>
+                <article data-card="study_abroad">
+                    <span>Study Abroad</span>
+                    <strong>Wenzhou China</strong>
+                </article>
+                <article data-card="recognition">
+                    <span>Recognition</span>
+                    <strong>Dean's List ×3</strong>
+                </article>
+                <article data-card="output">
+                    <span>Output</span>
+                    <strong>3 Live Products Shipped</strong>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Aileen Naa Ayele Aryeetey</p>
+    <p>Designed and Built in Code</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

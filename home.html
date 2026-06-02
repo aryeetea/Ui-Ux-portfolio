@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — Aileen Naa Ayele Aryeetey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-home">
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div class="page-glow page-glow-one" aria-hidden="true"></div>
+<div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+<nav id="nav">
+    <a href="home.html" class="nav-logo">
+        <span class="nav-logo-mark">AA</span>
+        <span class="nav-logo-text">Aileen Aryeetey</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Closet</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-ham" id="ham" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="work.html" class="mobile-nav-link">Work</a>
+    <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+</nav>
+
+<main>
+    <section class="return-strip" data-section="return">
+        <a href="index.html" class="return-link">Back to Closet</a>
+    </section>
+    <section id="home" data-section="intro.tsx">
+        <div class="hero-copy">
+            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Craft</div>
+            <h1 class="hero-title rv d1">Aileen Aryeetey.</h1>
+            <p class="hero-text rv d2">
+                I am Aileen. A recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I design directly in code, so what I imagine is exactly what ships, with no gap between vision and execution.
+            </p>
+            <div class="hero-actions rv d3">
+                <a href="work.html" class="btn btn-primary">View Selected Work</a>
+                <a href="contact.html" class="btn btn-secondary">Let's Work Together</a>
+            </div>
+            <div class="hero-mini-grid rv d4">
+                <article class="mini-card" data-card="products">
+                    <span class="mini-label">Live Products</span>
+                    <strong>3 Live Products Shipped</strong>
+                </article>
+                <article class="mini-card" data-card="gpa">
+                    <span class="mini-label">GPA</span>
+                    <strong>3.4</strong>
+                </article>
+                <article class="mini-card" data-card="recognition">
+                    <span class="mini-label">Recognition</span>
+                    <strong>Dean's List ×3</strong>
+                </article>
+                <article class="mini-card" data-card="location">
+                    <span class="mini-label">Location</span>
+                    <strong>Based in New Jersey</strong>
+                </article>
+            </div>
+        </div>
+
+        <div class="hero-visual rv-l d2">
+            <div class="portrait-card" data-file="profile.tsx">
+                <div class="portrait-header">
+                    <span>Currently</span>
+                    <span>New Jersey</span>
+                </div>
+                <div class="portrait-media">
+                    <img id="my-photo" class="profile-photo" src="portrait.png" alt="Aileen Naa Ayele Aryeetey">
+                    <div class="portrait-fallback" id="heroFallback" hidden>A</div>
+                </div>
+            </div>
+            <div class="floating-note note-one rv d3">
+                <span class="note-kicker">Focus</span>
+                <strong>UI clarity with personality</strong>
+            </div>
+            <div class="floating-note note-two rv d4">
+                <span class="note-kicker">Approach</span>
+                <strong>Concept, interface, and frontend execution</strong>
+            </div>
+        </div>
+    </section>
+    <section id="contact" data-section="next-step.sh">
+        <div class="contact-card rv">
+            <span class="section-kicker">Next File</span>
+            <h2>Continue through the archive.</h2>
+            <p>Open the rest of the portfolio through the separate pages for work, case studies, about, and contact.</p>
+            <div class="contact-actions">
+                <a href="work.html" class="btn btn-primary">Open Work</a>
+                <a href="case-studies.html" class="btn btn-secondary">Open Case Studies</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Aileen Naa Ayele Aryeetey</p>
+    <p>Designed and Built in Code</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

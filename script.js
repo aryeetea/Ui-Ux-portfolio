@@ -4,7 +4,20 @@ const mobileNav = document.getElementById('mobileNav');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
+const vaultScreen = document.getElementById('vaultScreen');
+const vaultFile = document.getElementById('vaultFile');
+const vaultPanel = document.getElementById('vaultPanel');
+const vaultForm = document.getElementById('vaultForm');
+const vaultInput = document.getElementById('vaultInput');
+const vaultMessage = document.getElementById('vaultMessage');
+const archiveScreen = document.getElementById('archiveScreen');
+const archiveFolders = document.querySelectorAll('.archive-folder');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const portfolioPasscode = 'AILEEN';
+
+if (vaultScreen) {
+    document.body.classList.add('is-locked');
+}
 
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
@@ -26,6 +39,83 @@ function closeMobileNav() {
 
 ham.addEventListener('click', toggleMobileNav);
 mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
+
+function openVaultPanel() {
+    if (!vaultPanel || !vaultFile) {
+        return;
+    }
+
+    vaultPanel.hidden = false;
+    requestAnimationFrame(() => {
+        vaultPanel.classList.add('is-visible');
+        vaultFile.classList.add('is-active');
+        vaultFile.setAttribute('aria-expanded', 'true');
+        vaultInput?.focus();
+    });
+}
+
+function unlockPortfolio() {
+    if (!vaultScreen || !archiveScreen) {
+        return;
+    }
+
+    vaultMessage?.classList.remove('is-error');
+    vaultMessage?.classList.add('is-success');
+    if (vaultMessage) {
+        vaultMessage.textContent = 'Access granted. Opening archive closet...';
+    }
+
+    vaultScreen.classList.add('is-unlocked');
+
+    window.setTimeout(() => {
+        vaultScreen.hidden = true;
+        archiveScreen.hidden = false;
+    }, reduceMotion ? 0 : 850);
+}
+
+function openArchiveTarget(path) {
+    if (!archiveScreen || !path) {
+        return;
+    }
+
+    archiveScreen.classList.add('is-hidden');
+    document.body.classList.remove('is-locked');
+
+    window.setTimeout(() => {
+        window.location.href = path;
+    }, reduceMotion ? 0 : 700);
+}
+
+vaultFile?.addEventListener('click', openVaultPanel);
+
+vaultForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const submitted = vaultInput?.value.trim().toUpperCase() ?? '';
+
+    if (submitted === portfolioPasscode) {
+        unlockPortfolio();
+        return;
+    }
+
+    if (vaultMessage) {
+        vaultMessage.textContent = 'Wrong passcode. Try Aileen\'s first name.';
+        vaultMessage.classList.remove('is-success');
+        vaultMessage.classList.add('is-error');
+    }
+
+    vaultInput?.select();
+});
+
+archiveFolders.forEach((folder) => {
+    folder.addEventListener('click', (event) => {
+        const path = folder.getAttribute('href');
+        if (path) {
+            event.preventDefault();
+            openArchiveTarget(path);
+        }
+    });
+});
 
 if (!reduceMotion && cursor && cursorRing && window.innerWidth > 768) {
     let mouseX = window.innerWidth / 2;

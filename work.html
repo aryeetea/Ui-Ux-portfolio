@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work — Aileen Naa Ayele Aryeetey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-work">
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div class="page-glow page-glow-one" aria-hidden="true"></div>
+<div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+<nav id="nav">
+    <a href="home.html" class="nav-logo">
+        <span class="nav-logo-mark">AA</span>
+        <span class="nav-logo-text">Aileen Aryeetey</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Closet</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-ham" id="ham" aria-label="Open navigation menu" aria-controls="mobileNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="work.html" class="mobile-nav-link">Work</a>
+    <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+</nav>
+
+<main>
+    <section class="return-strip" data-section="return">
+        <a href="index.html" class="return-link">Back to Closet</a>
+    </section>
+    <section id="work" data-section="selected-work.ts">
+        <div class="section-head rv">
+            <span class="section-kicker">Selected Work</span>
+            <h2>Selected work across social product, client, and e-commerce experiences.</h2>
+            <p>Each project combines interface direction, product thinking, and technical execution to create something distinctive and useful.</p>
+        </div>
+
+        <div class="work-grid">
+            <article class="project-card project-card-featured rv d1" data-number="01" data-file="dear-stranger.tsx">
+                <div class="project-preview preview-berry">
+                    <iframe src="https://dearstranger.xyz" title="Dear Stranger live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
+                    <div class="project-fallback"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-topline">
+                        <span>01</span>
+                        <span>Full Stack</span>
+                    </div>
+                    <h3>Dear Stranger</h3>
+                    <p>A full stack social platform where strangers connect through intentional letter writing. I led the full UI/UX design direction, from the deep space aesthetic to the interactive star map and customizable letter editor.</p>
+                    <div class="tag-row">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>Supabase</span>
+                        <span>OpenAI</span>
+                    </div>
+                    <a href="https://dearstranger.xyz" target="_blank" rel="noopener">Visit Site</a>
+                </div>
+            </article>
+
+            <article class="project-card rv d2" data-number="02" data-file="das-training.tsx">
+                <div class="project-preview preview-sky">
+                    <iframe src="https://dascstraining.com" title="DAS Sterile Training Center live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
+                    <div class="project-fallback"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-topline">
+                        <span>02</span>
+                        <span>Client Work</span>
+                    </div>
+                    <h3>DAS Sterile Training</h3>
+                    <p>A production website for a live healthcare training company. Designed for immediate trust and clear navigation, because people making career decisions need to find information fast and feel confident doing it.</p>
+                    <div class="tag-row">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind</span>
+                        <span>WordPress</span>
+                    </div>
+                    <a href="https://dascstraining.com" target="_blank" rel="noopener">Visit Site</a>
+                </div>
+            </article>
+
+            <article class="project-card rv d3" data-number="03" data-file="gobe-hemaa.tsx">
+                <div class="project-preview preview-mango">
+                    <iframe src="https://gob3hemaa.vercel.app" title="Gobɛ Hemaa live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
+                    <div class="project-fallback"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-topline">
+                        <span>03</span>
+                        <span>Full Stack</span>
+                    </div>
+                    <h3>Gobɛ Hemaa</h3>
+                    <p>A full stack food ordering platform built for my cousin's Ghanaian food business. Designed to feel warm and cultural while handling payments and order management without friction.</p>
+                    <div class="tag-row">
+                        <span>REST API</span>
+                        <span>PostgreSQL</span>
+                        <span>Prisma</span>
+                        <span>Paystack</span>
+                        <span>Flutterwave</span>
+                    </div>
+                    <a href="https://gob3hemaa.vercel.app" target="_blank" rel="noopener">Visit Site</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Aileen Naa Ayele Aryeetey</p>
+    <p>Designed and Built in Code</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -3,79 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aileen Naa Ayele Aryeetey — UI/UX Designer &amp; Product Builder</title>
+    <title>Case Studies — Aileen Naa Ayele Aryeetey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="is-locked">
-<div class="vault-screen" id="vaultScreen" aria-live="polite">
-    <div class="vault-backdrop"></div>
-    <div class="vault-shell">
-        <button type="button" class="vault-file" id="vaultFile" aria-controls="vaultPanel" aria-expanded="false">
-            <span class="vault-file-tab">portfolio.secure</span>
-            <span class="vault-file-icon" aria-hidden="true"></span>
-            <strong>Open Aileen's Portfolio</strong>
-            <span>Encrypted portfolio access</span>
-        </button>
-
-        <div class="vault-panel" id="vaultPanel" hidden>
-            <div class="vault-panel-top">
-                <span>Access Required</span>
-                <span>passcode://</span>
-            </div>
-            <h2>Enter passcode to unlock the portfolio.</h2>
-            <p>Hint: use the user's first name.</p>
-            <form class="vault-form" id="vaultForm">
-                <label class="sr-only" for="vaultInput">Passcode</label>
-                <input id="vaultInput" name="passcode" type="password" inputmode="text" autocomplete="off" placeholder="Enter passcode">
-                <button type="submit" class="btn btn-primary">Unlock File</button>
-            </form>
-            <p class="vault-message" id="vaultMessage">Click the file, enter the passcode, and watch it open.</p>
-        </div>
-    </div>
-</div>
-<div class="archive-screen" id="archiveScreen" hidden>
-    <div class="archive-backdrop"></div>
-    <div class="archive-shell">
-        <div class="archive-head">
-            <span>closet://portfolio-index</span>
-            <h2>Select a file to open.</h2>
-            <p>Everything is arranged alphabetically, like a personal archive.</p>
-        </div>
-        <div class="archive-closet">
-            <div class="archive-rail" aria-hidden="true"></div>
-            <div class="archive-shelf">
-                <a class="archive-folder" href="about.html">
-                    <span class="archive-letter">A</span>
-                    <strong>About</strong>
-                    <span>about.md</span>
-                </a>
-                <a class="archive-folder" href="case-studies.html">
-                    <span class="archive-letter">C</span>
-                    <strong>Case Studies</strong>
-                    <span>case-studies.json</span>
-                </a>
-                <a class="archive-folder" href="contact.html">
-                    <span class="archive-letter">C</span>
-                    <strong>Contact</strong>
-                    <span>contact.sh</span>
-                </a>
-                <a class="archive-folder" href="home.html">
-                    <span class="archive-letter">H</span>
-                    <strong>Home</strong>
-                    <span>intro.tsx</span>
-                </a>
-                <a class="archive-folder" href="work.html">
-                    <span class="archive-letter">W</span>
-                    <strong>Work</strong>
-                    <span>selected-work.ts</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<body class="theme-case-studies">
 <div id="cursor" aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
 <div class="page-glow page-glow-one" aria-hidden="true"></div>
@@ -87,6 +21,7 @@
         <span class="nav-logo-text">Aileen Aryeetey</span>
     </a>
     <ul class="nav-links">
+        <li><a href="index.html">Closet</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="about.html">About</a></li>
@@ -105,137 +40,9 @@
 </nav>
 
 <main>
-    <section id="home" data-section="intro.tsx">
-        <div class="hero-copy">
-            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Craft</div>
-            <h1 class="hero-title rv d1">Aileen Aryeetey.</h1>
-            <p class="hero-text rv d2">
-                I am Aileen. A recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I design directly in code, so what I imagine is exactly what ships, with no gap between vision and execution.
-            </p>
-            <div class="hero-actions rv d3">
-                <a href="#work" class="btn btn-primary">View Selected Work</a>
-                <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
-            </div>
-            <div class="hero-mini-grid rv d4">
-                <article class="mini-card" data-card="products">
-                    <span class="mini-label">Live Products</span>
-                    <strong>3 Live Products Shipped</strong>
-                </article>
-                <article class="mini-card" data-card="gpa">
-                    <span class="mini-label">GPA</span>
-                    <strong>3.4</strong>
-                </article>
-                <article class="mini-card" data-card="recognition">
-                    <span class="mini-label">Recognition</span>
-                    <strong>Dean's List ×3</strong>
-                </article>
-                <article class="mini-card" data-card="location">
-                    <span class="mini-label">Location</span>
-                    <strong>Based in New Jersey</strong>
-                </article>
-            </div>
-        </div>
-
-        <div class="hero-visual rv-l d2">
-            <div class="portrait-card" data-file="profile.tsx">
-                <div class="portrait-header">
-                    <span>Currently</span>
-                    <span>New Jersey</span>
-                </div>
-                <div class="portrait-media">
-                    <img id="my-photo" class="profile-photo" src="portrait.png" alt="Aileen Naa Ayele Aryeetey">
-                    <div class="portrait-fallback" id="heroFallback" hidden>A</div>
-                </div>
-            </div>
-            <div class="floating-note note-one rv d3">
-                <span class="note-kicker">Focus</span>
-                <strong>UI clarity with personality</strong>
-            </div>
-            <div class="floating-note note-two rv d4">
-                <span class="note-kicker">Approach</span>
-                <strong>Concept, interface, and frontend execution</strong>
-            </div>
-        </div>
+    <section class="return-strip" data-section="return">
+        <a href="index.html" class="return-link">Back to Closet</a>
     </section>
-
-    <section id="work" data-section="selected-work.ts">
-        <div class="section-head rv">
-            <span class="section-kicker">Selected Work</span>
-            <h2>Selected work across social product, client, and e-commerce experiences.</h2>
-            <p>Each project combines interface direction, product thinking, and technical execution to create something distinctive and useful.</p>
-        </div>
-
-        <div class="work-grid">
-            <article class="project-card project-card-featured rv d1" data-number="01" data-file="dear-stranger.tsx">
-                <div class="project-preview preview-berry">
-                    <iframe src="https://dearstranger.xyz" title="Dear Stranger live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
-                    <div class="project-fallback"></div>
-                </div>
-                <div class="project-body">
-                    <div class="project-topline">
-                        <span>01</span>
-                        <span>Full Stack</span>
-                    </div>
-                    <h3>Dear Stranger</h3>
-                    <p>A full stack social platform where strangers connect through intentional letter writing. I led the full UI/UX design direction, from the deep space aesthetic to the interactive star map and customizable letter editor.</p>
-                    <div class="tag-row">
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>Supabase</span>
-                        <span>OpenAI</span>
-                    </div>
-                    <a href="https://dearstranger.xyz" target="_blank" rel="noopener">Visit Site</a>
-                </div>
-            </article>
-
-            <article class="project-card rv d2" data-number="02" data-file="das-training.tsx">
-                <div class="project-preview preview-sky">
-                    <iframe src="https://dascstraining.com" title="DAS Sterile Training Center live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
-                    <div class="project-fallback"></div>
-                </div>
-                <div class="project-body">
-                    <div class="project-topline">
-                        <span>02</span>
-                        <span>Client Work</span>
-                    </div>
-                    <h3>DAS Sterile Training</h3>
-                    <p>A production website for a live healthcare training company. Designed for immediate trust and clear navigation, because people making career decisions need to find information fast and feel confident doing it.</p>
-                    <div class="tag-row">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>Tailwind</span>
-                        <span>WordPress</span>
-                    </div>
-                    <a href="https://dascstraining.com" target="_blank" rel="noopener">Visit Site</a>
-                </div>
-            </article>
-
-            <article class="project-card rv d3" data-number="03" data-file="gobe-hemaa.tsx">
-                <div class="project-preview preview-mango">
-                    <iframe src="https://gob3hemaa.vercel.app" title="Gobɛ Hemaa live preview" loading="lazy" sandbox="allow-scripts allow-same-origin" scrolling="no" tabindex="-1"></iframe>
-                    <div class="project-fallback"></div>
-                </div>
-                <div class="project-body">
-                    <div class="project-topline">
-                        <span>03</span>
-                        <span>Full Stack</span>
-                    </div>
-                    <h3>Gobɛ Hemaa</h3>
-                    <p>A full stack food ordering platform built for my cousin's Ghanaian food business. Designed to feel warm and cultural while handling payments and order management without friction.</p>
-                    <div class="tag-row">
-                        <span>REST API</span>
-                        <span>PostgreSQL</span>
-                        <span>Prisma</span>
-                        <span>Paystack</span>
-                        <span>Flutterwave</span>
-                    </div>
-                    <a href="https://gob3hemaa.vercel.app" target="_blank" rel="noopener">Visit Site</a>
-                </div>
-            </article>
-        </div>
-    </section>
-
     <section id="case-studies" data-section="case-studies.json">
         <div class="section-head rv">
             <span class="section-kicker">Case Studies</span>
@@ -423,47 +230,6 @@
                     </div>
                 </div>
             </article>
-        </div>
-    </section>
-
-    <section id="about" data-section="about.md">
-        <div class="about-copy rv">
-            <span class="section-kicker">About Me</span>
-            <h2>I design directly in code, which means what I imagine is exactly what ships.</h2>
-            <p>I am Aileen — a recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I care deeply about the details that most people skip: micro interactions, spacing, and the moment right before something clicks.</p>
-            <p>Unlike most designers, I can build what I design. No handoff, no gap, just the thing itself shaped carefully from vision to implementation.</p>
-            <div class="about-grid">
-                <article data-card="education">
-                    <span>Education</span>
-                    <strong>Kean University</strong>
-                </article>
-                <article data-card="study_abroad">
-                    <span>Study Abroad</span>
-                    <strong>Wenzhou China</strong>
-                </article>
-                <article data-card="recognition">
-                    <span>Recognition</span>
-                    <strong>Dean's List ×3</strong>
-                </article>
-                <article data-card="output">
-                    <span>Output</span>
-                    <strong>3 Live Products Shipped</strong>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" data-section="contact.sh">
-        <div class="contact-card rv">
-            <span class="section-kicker">Contact</span>
-            <h2>Let's make something beautiful.</h2>
-            <p>I am currently open to UI/UX design roles, product design opportunities, and freelance projects. If you have something worth building, let's talk.</p>
-            <div class="contact-actions">
-                <a href="mailto:aileenaryeetey.naa@gmail.com" class="btn btn-primary">Email Me</a>
-                <a href="https://github.com/aryeetea" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
-                <a href="https://linkedin.com/in/aileen-aryeetey-162033263" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-            </div>
-            <a href="mailto:aileenaryeetey.naa@gmail.com" class="contact-email">aileenaryeetey.naa@gmail.com</a>
         </div>
     </section>
 </main>
