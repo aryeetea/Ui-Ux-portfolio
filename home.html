@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home — Aileen Naa Ayele Aryeetey</title>
+    <title>Home - Aileen Naa Ayele Aryeetey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-home">
@@ -21,7 +21,7 @@
         <span class="nav-logo-text">Aileen Aryeetey</span>
     </a>
     <ul class="nav-links">
-        <li><a href="index.html">Closet</a></li>
+        <li><a href="index.html?closet=1">Closet</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="about.html">About</a></li>
@@ -33,6 +33,7 @@
 </nav>
 
 <nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="index.html?closet=1" class="mobile-nav-link">Closet</a>
     <a href="work.html" class="mobile-nav-link">Work</a>
     <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
     <a href="about.html" class="mobile-nav-link">About</a>
@@ -41,14 +42,14 @@
 
 <main>
     <section class="return-strip" data-section="return">
-        <a href="index.html" class="return-link">Back to Closet</a>
+        <a href="index.html?closet=1" class="return-link" aria-label="Back to Closet"></a>
     </section>
     <section id="home" data-section="intro.tsx">
         <div class="hero-copy">
-            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Craft</div>
+            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Developer</div>
             <h1 class="hero-title rv d1">Aileen Aryeetey.</h1>
             <p class="hero-text rv d2">
-                I am Aileen. A recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I design directly in code, so what I imagine is exactly what ships, with no gap between vision and execution.
+                I'm Aileen, a recent Information Technology graduate from Kean University. I graduated with a 3.4 GPA, studied abroad in Wenzhou, China, and I pretty much design straight in code. What I picture is what gets built.
             </p>
             <div class="hero-actions rv d3">
                 <a href="work.html" class="btn btn-primary">View Selected Work</a>
@@ -87,19 +88,19 @@
             </div>
             <div class="floating-note note-one rv d3">
                 <span class="note-kicker">Focus</span>
-                <strong>UI clarity with personality</strong>
+                <strong>Clean UI that still feels like something</strong>
             </div>
             <div class="floating-note note-two rv d4">
                 <span class="note-kicker">Approach</span>
-                <strong>Concept, interface, and frontend execution</strong>
+                <strong>Idea, design, and frontend, all in one place</strong>
             </div>
         </div>
     </section>
     <section id="contact" data-section="next-step.sh">
         <div class="contact-card rv">
             <span class="section-kicker">Next File</span>
-            <h2>Continue through the archive.</h2>
-            <p>Open the rest of the portfolio through the separate pages for work, case studies, about, and contact.</p>
+            <h2>Keep going through the archive.</h2>
+            <p>If you want the full picture, open the other pages for my work, case studies, about, and contact.</p>
             <div class="contact-actions">
                 <a href="work.html" class="btn btn-primary">Open Work</a>
                 <a href="case-studies.html" class="btn btn-secondary">Open Case Studies</a>
@@ -107,6 +108,10 @@
         </div>
     </section>
 </main>
+
+<section class="thank-you-wrap">
+    <p class="thank-you-script rv">Thank you</p>
+</section>
 
 <footer>
     <p>© 2026 Aileen Naa Ayele Aryeetey</p>

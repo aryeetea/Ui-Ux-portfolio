@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies — Aileen Naa Ayele Aryeetey</title>
+    <title>Case Studies - Aileen Naa Ayele Aryeetey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-case-studies">
@@ -21,7 +21,7 @@
         <span class="nav-logo-text">Aileen Aryeetey</span>
     </a>
     <ul class="nav-links">
-        <li><a href="index.html">Closet</a></li>
+        <li><a href="index.html?closet=1">Closet</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="about.html">About</a></li>
@@ -33,6 +33,7 @@
 </nav>
 
 <nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="index.html?closet=1" class="mobile-nav-link">Closet</a>
     <a href="work.html" class="mobile-nav-link">Work</a>
     <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
     <a href="about.html" class="mobile-nav-link">About</a>
@@ -41,13 +42,13 @@
 
 <main>
     <section class="return-strip" data-section="return">
-        <a href="index.html" class="return-link">Back to Closet</a>
+        <a href="index.html?closet=1" class="return-link" aria-label="Back to Closet"></a>
     </section>
     <section id="case-studies" data-section="case-studies.json">
         <div class="section-head rv">
             <span class="section-kicker">Case Studies</span>
-            <h2>How I think through product, interface, and implementation.</h2>
-            <p>These are fuller case studies focused on the challenge, the design decisions, and what made the final experience work.</p>
+            <h2>How I think through the product, the interface, and the build.</h2>
+            <p>These are the fuller stories behind the projects, what the problem was, the choices I made, and why the final result worked.</p>
         </div>
 
         <div class="cs-list">
@@ -61,29 +62,29 @@
                 <div class="cs-panel" id="cs-panel-1">
                     <div class="cs-panel-inner">
                         <div class="cs-story">
-                            <p class="cs-lead">We built Dear Stranger around one question: what would it look like to make slowness the point?</p>
-                            <p>My sister moved to the United States, and even though she was surrounded by people every single day, she still could not find a way to make real connections. Social media feels performative. Messaging apps feel like tasks. Everything moves too fast. I brought that idea to my friends, and we built Dear Stranger together.</p>
-                            <p>This was a collaborative class project, and none of us worked in strict roles. We all contributed to design decisions, feature priorities, user flows, and code. We aligned on one core idea: if the product was going to help people connect more honestly, then slowness had to be part of the design, not something users had to fight for.</p>
+                            <p class="cs-lead">We built Dear Stranger around one question, what would it look like if slowness was the whole point?</p>
+                            <p>My sister moved to the United States, and even though she was around people every day, she still couldn't find real connection. Social media can feel kind of for show. Messaging apps can feel like work. Everything moves too fast. I brought that idea to my friends, and we built Dear Stranger together.</p>
+                            <p>This was a collaborative class project, and none of us stayed in strict roles. We all touched design decisions, feature priorities, user flows, and code. The main thing we agreed on was simple, if we wanted people to connect more honestly, the product had to make space for that.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>There is a very specific kind of loneliness that most platforms do not address: being somewhere new, surrounded by strangers, with no real way in. Most digital tools are built for people who already have a social life, not for people trying to build one slowly.</p>
+                                    <p>There's a very specific kind of loneliness most platforms don't really deal with. You're somewhere new, surrounded by strangers, and there's no real way in. Most digital products are made for people who already have a social life, not people trying to build one slowly.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>How We Worked</h4>
-                                    <p>We collaborated across everything equally. We tested the star map discovery experience together, iterated on it through each other's feedback, and let the visual direction grow out of shared conversations about what the platform should feel like.</p>
+                                    <p>We pretty much worked on everything together. We tested the star map discovery flow as a group, gave each other feedback, and let the visual direction grow naturally from conversations about how the platform should feel.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Philosophy</h4>
-                                    <p>The dark void background made the universe between people feel infinite. Gold accents brought warmth into that darkness. Cinzel gave labels a timeless quality, while Cormorant Garamond made the letters feel intimate and handwritten. Each user got an animated hub so no one felt like just another profile.</p>
+                                    <p>The dark space background made the distance between people feel huge. The gold added warmth. Cinzel gave the labels a timeless feel, and Cormorant Garamond made the letters feel more personal, almost handwritten. We also gave each person an animated hub so they wouldn't just feel like another profile.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Discover on the star map, visit a hub, write a letter, and wait for a reply. The pause is part of the experience, not a flaw in it.</p>
+                                    <p>You discover someone on the star map, visit their hub, write a letter, and wait for a reply. That pause is part of the experience. It's not a bug.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>Dear Stranger launched at dearstranger.xyz and picked up organic traffic from Google, Discord, and LinkedIn without any marketing. In the first week it reached 37 page views, with real users creating hubs and writing letters.</p>
+                                    <p>Dear Stranger launched at dearstranger.xyz and got organic traffic from Google, Discord, and LinkedIn without any marketing. In the first week it reached 37 page views, and real users were already creating hubs and writing letters.</p>
                                 </article>
                             </div>
                         </div>
@@ -121,29 +122,29 @@
                 <div class="cs-panel" id="cs-panel-2">
                     <div class="cs-panel-inner">
                         <div class="cs-story">
-                            <p class="cs-lead">A healthcare training company needed a website that would convince prospective students to enroll.</p>
-                            <p>Before designing anything, I researched the industry thoroughly and studied every competitor site I could find. The patterns were consistent: poor color usage, weak hierarchy, crowded layouts, and no clear sense of trust or professionalism.</p>
-                            <p>Because people making career decisions need confidence immediately, I treated clarity as the core design requirement. The layout was rebuilt around distinct sections, generous spacing, readable typography, and straightforward decision paths that made the site feel more credible and easier to use.</p>
+                            <p class="cs-lead">A healthcare training company needed a website that could actually help convince students to enroll.</p>
+                            <p>Before I designed anything, I spent time researching the industry and looking through competitor sites. Honestly, the same problems kept showing up, bad color choices, weak hierarchy, crowded pages, and not much trust.</p>
+                            <p>Since people making career decisions need confidence right away, I treated clarity like the main requirement. I rebuilt the layout around clear sections, better spacing, readable type, and paths that made the next step feel obvious.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>Every sterile processing school website I found had the same problems: poor color usage, no clear sections, everything crammed onto one page, and no visual hierarchy. They made an important decision feel harder than it should.</p>
+                                    <p>Almost every sterile processing school site I found had the same issues, bad color use, weak sections, too much on one page, and barely any hierarchy. They made an important decision feel more confusing than it needed to be.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Research Findings</h4>
-                                    <p>Competitor sites lacked visual hierarchy, used color inconsistently, had poor information architecture, and communicated little credibility or professionalism. These were all signals I needed to correct.</p>
+                                    <p>The competitor sites had weak hierarchy, inconsistent color, messy information structure, and not much credibility. Those were exactly the things I knew I had to fix.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Decisions</h4>
-                                    <p>I used clear sections, clean typography, generous spacing, a prominent application form with autosave, a testimonial carousel, FAQ accordion, and a Google Maps embed for local trust and discoverability.</p>
+                                    <p>I used clear sections, clean type, more breathing room, a visible application form with autosave, testimonials, an FAQ accordion, and a Google Maps embed so the business felt more real and easier to trust.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Land, learn about the program, read testimonials, and apply. The design was meant to make the next step feel obvious and reassuring.</p>
+                                    <p>You land on the site, learn about the program, read testimonials, and apply. I wanted the next step to feel obvious and reassuring.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>The site is live at dascstraining.com and actively serving real users. The client can manage content independently through WordPress, and the project was delivered on time with a clean handoff.</p>
+                                    <p>The site is live at dascstraining.com and being used by real people. The client can manage content through WordPress, and I delivered it on time with a clean handoff.</p>
                                 </article>
                             </div>
                         </div>
@@ -182,28 +183,28 @@
                     <div class="cs-panel-inner">
                         <div class="cs-story">
                             <p class="cs-lead">My cousin in Ghana started a food business and wanted me to invest, so I offered something better and built her a platform.</p>
-                            <p>Gobɛ Hemaa means Queen of Food in Twi, and that meaning shaped the entire product direction. This was not just about putting a menu online. It was about giving the business a digital home that felt culturally connected, visually warm, and trustworthy enough to support real transactions.</p>
-                            <p>The challenge was building something that felt like hers while also handling the realities of e-commerce. Existing food ordering platforms in Ghana either did not support local payment methods or felt completely disconnected from Ghanaian culture.</p>
+                            <p>Gobɛ Hemaa means Queen of Food in Twi, and that shaped the whole direction. This wasn't just about putting a menu online. It was about giving the business a digital home that felt warm, cultural, and trustworthy enough for real orders.</p>
+                            <p>The challenge was making something that actually felt like hers while still handling the real side of e-commerce. A lot of food platforms in Ghana either didn't support local payment methods or just felt disconnected from the culture.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>My cousin had no online presence. The available food ordering options either lacked local payment support or felt generic and culturally disconnected. She needed something that actually felt like hers.</p>
+                                    <p>My cousin didn't have an online presence. The food ordering options out there either didn't support local payments or felt too generic and disconnected from the culture. She needed something that really felt like her business.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Decisions</h4>
-                                    <p>I used warmth and color to reflect the culture and brand, but kept the layout simple so ordering stayed fast and frictionless. Cultural expression should never slow down the transaction.</p>
+                                    <p>I used warmth and color to reflect the culture and the brand, but I kept the layout simple so ordering stayed easy. I wanted the personality to be there without slowing anything down.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Payment Challenge</h4>
-                                    <p>Integrating Paystack, Flutterwave, and Hubtel required designing checkout flows for Mobile Money, cash on delivery, and the unique success and failure states of each payment method.</p>
+                                    <p>Getting Paystack, Flutterwave, and Hubtel working meant designing checkout flows for Mobile Money, cash on delivery, and all the different success and failure states that come with each payment method.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Browse menu, add to cart, create account, checkout, and confirm order. The experience had to feel familiar and trustworthy from start to finish.</p>
+                                    <p>You browse the menu, add to cart, create an account, check out, and confirm the order. I wanted the whole thing to feel familiar and trustworthy from start to finish.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>The product is live at gob3hemaa.vercel.app. It is a real platform built for a real business, designed with cultural intention and shipped from scratch.</p>
+                                    <p>The product is live at gob3hemaa.vercel.app. It's a real platform for a real business, built from scratch with culture in mind.</p>
                                 </article>
                             </div>
                         </div>
@@ -233,6 +234,10 @@
         </div>
     </section>
 </main>
+
+<section class="thank-you-wrap">
+    <p class="thank-you-script rv">Thank you</p>
+</section>
 
 <footer>
     <p>© 2026 Aileen Naa Ayele Aryeetey</p>

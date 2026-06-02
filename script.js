@@ -14,9 +14,16 @@ const archiveScreen = document.getElementById('archiveScreen');
 const archiveFolders = document.querySelectorAll('.archive-folder');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const portfolioPasscode = 'AILEEN';
+const showClosetDirectly = new URLSearchParams(window.location.search).get('closet') === '1';
 
 if (vaultScreen) {
     document.body.classList.add('is-locked');
+}
+
+if (showClosetDirectly && vaultScreen && archiveScreen) {
+    vaultScreen.hidden = true;
+    archiveScreen.hidden = false;
+    document.body.classList.remove('is-locked');
 }
 
 window.addEventListener('scroll', () => {
@@ -62,7 +69,7 @@ function unlockPortfolio() {
     vaultMessage?.classList.remove('is-error');
     vaultMessage?.classList.add('is-success');
     if (vaultMessage) {
-        vaultMessage.textContent = 'Access granted. Opening archive closet...';
+        vaultMessage.textContent = 'Passcode worked. Opening the closet now...';
     }
 
     vaultScreen.classList.add('is-unlocked');
@@ -70,6 +77,7 @@ function unlockPortfolio() {
     window.setTimeout(() => {
         vaultScreen.hidden = true;
         archiveScreen.hidden = false;
+        document.body.classList.remove('is-locked');
     }, reduceMotion ? 0 : 850);
 }
 
@@ -99,7 +107,7 @@ vaultForm?.addEventListener('submit', (event) => {
     }
 
     if (vaultMessage) {
-        vaultMessage.textContent = 'Wrong passcode. Try Aileen\'s first name.';
+        vaultMessage.textContent = 'That is not it. Try Aileen\'s first name.';
         vaultMessage.classList.remove('is-success');
         vaultMessage.classList.add('is-error');
     }

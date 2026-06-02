@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aileen Naa Ayele Aryeetey — UI/UX Designer &amp; Product Builder</title>
+    <title>Aileen Naa Ayele Aryeetey - UI/UX Designer &amp; Product Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="is-locked">
@@ -17,7 +17,7 @@
             <span class="vault-file-tab">portfolio.secure</span>
             <span class="vault-file-icon" aria-hidden="true"></span>
             <strong>Open Aileen's Portfolio</strong>
-            <span>Encrypted portfolio access</span>
+            <span>Private portfolio access</span>
         </button>
 
         <div class="vault-panel" id="vaultPanel" hidden>
@@ -25,14 +25,14 @@
                 <span>Access Required</span>
                 <span>passcode://</span>
             </div>
-            <h2>Enter passcode to unlock the portfolio.</h2>
+            <h2>Enter the passcode to open the portfolio.</h2>
             <p>Hint: use the user's first name.</p>
             <form class="vault-form" id="vaultForm">
                 <label class="sr-only" for="vaultInput">Passcode</label>
                 <input id="vaultInput" name="passcode" type="password" inputmode="text" autocomplete="off" placeholder="Enter passcode">
-                <button type="submit" class="btn btn-primary">Unlock File</button>
+                <button type="submit" class="btn btn-primary">Open Portfolio</button>
             </form>
-            <p class="vault-message" id="vaultMessage">Click the file, enter the passcode, and watch it open.</p>
+            <p class="vault-message" id="vaultMessage">Click the file, enter the passcode, and it will open.</p>
         </div>
     </div>
 </div>
@@ -41,8 +41,8 @@
     <div class="archive-shell">
         <div class="archive-head">
             <span>closet://portfolio-index</span>
-            <h2>Select a file to open.</h2>
-            <p>Everything is arranged alphabetically, like a personal archive.</p>
+            <h2>Pick a file to open.</h2>
+            <p>Everything is in alphabetical order, like a personal archive.</p>
         </div>
         <div class="archive-closet">
             <div class="archive-rail" aria-hidden="true"></div>
@@ -98,6 +98,7 @@
 </nav>
 
 <nav class="nav-mobile" id="mobileNav" aria-hidden="true">
+    <a href="index.html?closet=1" class="mobile-nav-link">Closet</a>
     <a href="work.html" class="mobile-nav-link">Work</a>
     <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
     <a href="about.html" class="mobile-nav-link">About</a>
@@ -107,14 +108,14 @@
 <main>
     <section id="home" data-section="intro.tsx">
         <div class="hero-copy">
-            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Craft</div>
+            <div class="eyebrow rv">UI/UX Designer · Product Builder · Frontend Developer</div>
             <h1 class="hero-title rv d1">Aileen Aryeetey.</h1>
             <p class="hero-text rv d2">
-                I am Aileen. A recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I design directly in code, so what I imagine is exactly what ships, with no gap between vision and execution.
+                I'm Aileen, a recent Information Technology graduate from Kean University. I graduated with a 3.4 GPA, studied abroad in Wenzhou, China, and I pretty much design straight in code. What I picture is what gets built.
             </p>
             <div class="hero-actions rv d3">
-                <a href="#work" class="btn btn-primary">View Selected Work</a>
-                <a href="#contact" class="btn btn-secondary">Let's Work Together</a>
+                <a href="work.html" class="btn btn-primary">View Selected Work</a>
+                <a href="contact.html" class="btn btn-secondary">Let's Work Together</a>
             </div>
             <div class="hero-mini-grid rv d4">
                 <article class="mini-card" data-card="products">
@@ -149,11 +150,11 @@
             </div>
             <div class="floating-note note-one rv d3">
                 <span class="note-kicker">Focus</span>
-                <strong>UI clarity with personality</strong>
+                <strong>Clean UI that still feels like something</strong>
             </div>
             <div class="floating-note note-two rv d4">
                 <span class="note-kicker">Approach</span>
-                <strong>Concept, interface, and frontend execution</strong>
+                <strong>Idea, design, and frontend, all in one place</strong>
             </div>
         </div>
     </section>
@@ -161,8 +162,8 @@
     <section id="work" data-section="selected-work.ts">
         <div class="section-head rv">
             <span class="section-kicker">Selected Work</span>
-            <h2>Selected work across social product, client, and e-commerce experiences.</h2>
-            <p>Each project combines interface direction, product thinking, and technical execution to create something distinctive and useful.</p>
+            <h2>Work across social product, client projects, and e-commerce.</h2>
+            <p>These projects show how I think about design, how I build, and how I make everything work together in the final product.</p>
         </div>
 
         <div class="work-grid">
@@ -177,7 +178,7 @@
                         <span>Full Stack</span>
                     </div>
                     <h3>Dear Stranger</h3>
-                    <p>A full stack social platform where strangers connect through intentional letter writing. I led the full UI/UX design direction, from the deep space aesthetic to the interactive star map and customizable letter editor.</p>
+                    <p>A full stack social platform where strangers connect through intentional letter writing. I worked on the full UI/UX direction, from the space inspired look to the interactive star map and customizable letter editor.</p>
                     <div class="tag-row">
                         <span>React</span>
                         <span>Next.js</span>
@@ -200,7 +201,7 @@
                         <span>Client Work</span>
                     </div>
                     <h3>DAS Sterile Training</h3>
-                    <p>A production website for a live healthcare training company. Designed for immediate trust and clear navigation, because people making career decisions need to find information fast and feel confident doing it.</p>
+                    <p>A live website for a healthcare training company. I designed it to feel clear and trustworthy right away, because people making career decisions shouldn't have to dig for basic information.</p>
                     <div class="tag-row">
                         <span>React</span>
                         <span>TypeScript</span>
@@ -222,7 +223,7 @@
                         <span>Full Stack</span>
                     </div>
                     <h3>Gobɛ Hemaa</h3>
-                    <p>A full stack food ordering platform built for my cousin's Ghanaian food business. Designed to feel warm and cultural while handling payments and order management without friction.</p>
+                    <p>A full stack food ordering platform I built for my cousin's Ghanaian food business. I wanted it to feel warm and true to the culture while still making ordering and payments feel easy.</p>
                     <div class="tag-row">
                         <span>REST API</span>
                         <span>PostgreSQL</span>
@@ -239,8 +240,8 @@
     <section id="case-studies" data-section="case-studies.json">
         <div class="section-head rv">
             <span class="section-kicker">Case Studies</span>
-            <h2>How I think through product, interface, and implementation.</h2>
-            <p>These are fuller case studies focused on the challenge, the design decisions, and what made the final experience work.</p>
+            <h2>How I think through the product, the interface, and the build.</h2>
+            <p>These are the fuller stories behind the projects, what the problem was, the choices I made, and why the final result worked.</p>
         </div>
 
         <div class="cs-list">
@@ -254,29 +255,29 @@
                 <div class="cs-panel" id="cs-panel-1">
                     <div class="cs-panel-inner">
                         <div class="cs-story">
-                            <p class="cs-lead">We built Dear Stranger around one question: what would it look like to make slowness the point?</p>
-                            <p>My sister moved to the United States, and even though she was surrounded by people every single day, she still could not find a way to make real connections. Social media feels performative. Messaging apps feel like tasks. Everything moves too fast. I brought that idea to my friends, and we built Dear Stranger together.</p>
-                            <p>This was a collaborative class project, and none of us worked in strict roles. We all contributed to design decisions, feature priorities, user flows, and code. We aligned on one core idea: if the product was going to help people connect more honestly, then slowness had to be part of the design, not something users had to fight for.</p>
+                            <p class="cs-lead">We built Dear Stranger around one question, what would it look like if slowness was the whole point?</p>
+                            <p>My sister moved to the United States, and even though she was around people every day, she still couldn't find real connection. Social media can feel kind of for show. Messaging apps can feel like work. Everything moves too fast. I brought that idea to my friends, and we built Dear Stranger together.</p>
+                            <p>This was a collaborative class project, and none of us stayed in strict roles. We all touched design decisions, feature priorities, user flows, and code. The main thing we agreed on was simple, if we wanted people to connect more honestly, the product had to make space for that.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>There is a very specific kind of loneliness that most platforms do not address: being somewhere new, surrounded by strangers, with no real way in. Most digital tools are built for people who already have a social life, not for people trying to build one slowly.</p>
+                                    <p>There's a very specific kind of loneliness most platforms don't really deal with. You're somewhere new, surrounded by strangers, and there's no real way in. Most digital products are made for people who already have a social life, not people trying to build one slowly.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>How We Worked</h4>
-                                    <p>We collaborated across everything equally. We tested the star map discovery experience together, iterated on it through each other's feedback, and let the visual direction grow out of shared conversations about what the platform should feel like.</p>
+                                    <p>We pretty much worked on everything together. We tested the star map discovery flow as a group, gave each other feedback, and let the visual direction grow naturally from conversations about how the platform should feel.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Philosophy</h4>
-                                    <p>The dark void background made the universe between people feel infinite. Gold accents brought warmth into that darkness. Cinzel gave labels a timeless quality, while Cormorant Garamond made the letters feel intimate and handwritten. Each user got an animated hub so no one felt like just another profile.</p>
+                                    <p>The dark space background made the distance between people feel huge. The gold added warmth. Cinzel gave the labels a timeless feel, and Cormorant Garamond made the letters feel more personal, almost handwritten. We also gave each person an animated hub so they wouldn't just feel like another profile.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Discover on the star map, visit a hub, write a letter, and wait for a reply. The pause is part of the experience, not a flaw in it.</p>
+                                    <p>You discover someone on the star map, visit their hub, write a letter, and wait for a reply. That pause is part of the experience. It's not a bug.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>Dear Stranger launched at dearstranger.xyz and picked up organic traffic from Google, Discord, and LinkedIn without any marketing. In the first week it reached 37 page views, with real users creating hubs and writing letters.</p>
+                                    <p>Dear Stranger launched at dearstranger.xyz and got organic traffic from Google, Discord, and LinkedIn without any marketing. In the first week it reached 37 page views, and real users were already creating hubs and writing letters.</p>
                                 </article>
                             </div>
                         </div>
@@ -314,29 +315,29 @@
                 <div class="cs-panel" id="cs-panel-2">
                     <div class="cs-panel-inner">
                         <div class="cs-story">
-                            <p class="cs-lead">A healthcare training company needed a website that would convince prospective students to enroll.</p>
-                            <p>Before designing anything, I researched the industry thoroughly and studied every competitor site I could find. The patterns were consistent: poor color usage, weak hierarchy, crowded layouts, and no clear sense of trust or professionalism.</p>
-                            <p>Because people making career decisions need confidence immediately, I treated clarity as the core design requirement. The layout was rebuilt around distinct sections, generous spacing, readable typography, and straightforward decision paths that made the site feel more credible and easier to use.</p>
+                            <p class="cs-lead">A healthcare training company needed a website that could actually help convince students to enroll.</p>
+                            <p>Before I designed anything, I spent time researching the industry and looking through competitor sites. Honestly, the same problems kept showing up, bad color choices, weak hierarchy, crowded pages, and not much trust.</p>
+                            <p>Since people making career decisions need confidence right away, I treated clarity like the main requirement. I rebuilt the layout around clear sections, better spacing, readable type, and paths that made the next step feel obvious.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>Every sterile processing school website I found had the same problems: poor color usage, no clear sections, everything crammed onto one page, and no visual hierarchy. They made an important decision feel harder than it should.</p>
+                                    <p>Almost every sterile processing school site I found had the same issues, bad color use, weak sections, too much on one page, and barely any hierarchy. They made an important decision feel more confusing than it needed to be.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Research Findings</h4>
-                                    <p>Competitor sites lacked visual hierarchy, used color inconsistently, had poor information architecture, and communicated little credibility or professionalism. These were all signals I needed to correct.</p>
+                                    <p>The competitor sites had weak hierarchy, inconsistent color, messy information structure, and not much credibility. Those were exactly the things I knew I had to fix.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Decisions</h4>
-                                    <p>I used clear sections, clean typography, generous spacing, a prominent application form with autosave, a testimonial carousel, FAQ accordion, and a Google Maps embed for local trust and discoverability.</p>
+                                    <p>I used clear sections, clean type, more breathing room, a visible application form with autosave, testimonials, an FAQ accordion, and a Google Maps embed so the business felt more real and easier to trust.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Land, learn about the program, read testimonials, and apply. The design was meant to make the next step feel obvious and reassuring.</p>
+                                    <p>You land on the site, learn about the program, read testimonials, and apply. I wanted the next step to feel obvious and reassuring.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>The site is live at dascstraining.com and actively serving real users. The client can manage content independently through WordPress, and the project was delivered on time with a clean handoff.</p>
+                                    <p>The site is live at dascstraining.com and being used by real people. The client can manage content through WordPress, and I delivered it on time with a clean handoff.</p>
                                 </article>
                             </div>
                         </div>
@@ -375,28 +376,28 @@
                     <div class="cs-panel-inner">
                         <div class="cs-story">
                             <p class="cs-lead">My cousin in Ghana started a food business and wanted me to invest, so I offered something better and built her a platform.</p>
-                            <p>Gobɛ Hemaa means Queen of Food in Twi, and that meaning shaped the entire product direction. This was not just about putting a menu online. It was about giving the business a digital home that felt culturally connected, visually warm, and trustworthy enough to support real transactions.</p>
-                            <p>The challenge was building something that felt like hers while also handling the realities of e-commerce. Existing food ordering platforms in Ghana either did not support local payment methods or felt completely disconnected from Ghanaian culture.</p>
+                            <p>Gobɛ Hemaa means Queen of Food in Twi, and that shaped the whole direction. This wasn't just about putting a menu online. It was about giving the business a digital home that felt warm, cultural, and trustworthy enough for real orders.</p>
+                            <p>The challenge was making something that actually felt like hers while still handling the real side of e-commerce. A lot of food platforms in Ghana either didn't support local payment methods or just felt disconnected from the culture.</p>
                             <div class="cs-sections">
                                 <article class="cs-block">
                                     <h4>The Problem</h4>
-                                    <p>My cousin had no online presence. The available food ordering options either lacked local payment support or felt generic and culturally disconnected. She needed something that actually felt like hers.</p>
+                                    <p>My cousin didn't have an online presence. The food ordering options out there either didn't support local payments or felt too generic and disconnected from the culture. She needed something that really felt like her business.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Design Decisions</h4>
-                                    <p>I used warmth and color to reflect the culture and brand, but kept the layout simple so ordering stayed fast and frictionless. Cultural expression should never slow down the transaction.</p>
+                                    <p>I used warmth and color to reflect the culture and the brand, but I kept the layout simple so ordering stayed easy. I wanted the personality to be there without slowing anything down.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Payment Challenge</h4>
-                                    <p>Integrating Paystack, Flutterwave, and Hubtel required designing checkout flows for Mobile Money, cash on delivery, and the unique success and failure states of each payment method.</p>
+                                    <p>Getting Paystack, Flutterwave, and Hubtel working meant designing checkout flows for Mobile Money, cash on delivery, and all the different success and failure states that come with each payment method.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Core Flow</h4>
-                                    <p>Browse menu, add to cart, create account, checkout, and confirm order. The experience had to feel familiar and trustworthy from start to finish.</p>
+                                    <p>You browse the menu, add to cart, create an account, check out, and confirm the order. I wanted the whole thing to feel familiar and trustworthy from start to finish.</p>
                                 </article>
                                 <article class="cs-block">
                                     <h4>Outcome</h4>
-                                    <p>The product is live at gob3hemaa.vercel.app. It is a real platform built for a real business, designed with cultural intention and shipped from scratch.</p>
+                                    <p>The product is live at gob3hemaa.vercel.app. It's a real platform for a real business, built from scratch with culture in mind.</p>
                                 </article>
                             </div>
                         </div>
@@ -429,9 +430,9 @@
     <section id="about" data-section="about.md">
         <div class="about-copy rv">
             <span class="section-kicker">About Me</span>
-            <h2>I design directly in code, which means what I imagine is exactly what ships.</h2>
-            <p>I am Aileen — a recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I care deeply about the details that most people skip: micro interactions, spacing, and the moment right before something clicks.</p>
-            <p>Unlike most designers, I can build what I design. No handoff, no gap, just the thing itself shaped carefully from vision to implementation.</p>
+            <h2>I design in code, so the idea and the final thing stay close.</h2>
+            <p>I'm Aileen, a recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I care a lot about the details people usually skip, like spacing, micro interactions, and that little moment right before something clicks.</p>
+            <p>I can design and build my own work, which honestly changes everything. There isn't a big gap between the idea and the final result.</p>
             <div class="about-grid">
                 <article data-card="education">
                     <span>Education</span>
@@ -456,8 +457,8 @@
     <section id="contact" data-section="contact.sh">
         <div class="contact-card rv">
             <span class="section-kicker">Contact</span>
-            <h2>Let's make something beautiful.</h2>
-            <p>I am currently open to UI/UX design roles, product design opportunities, and freelance projects. If you have something worth building, let's talk.</p>
+            <h2>Let's build something good.</h2>
+            <p>I'm open to UI/UX design roles, product design opportunities, and freelance work. If you're building something interesting, I'd really love to talk.</p>
             <div class="contact-actions">
                 <a href="mailto:aileenaryeetey.naa@gmail.com" class="btn btn-primary">Email Me</a>
                 <a href="https://github.com/aryeetea" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
