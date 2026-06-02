@@ -69,7 +69,7 @@ function unlockPortfolio() {
     vaultMessage?.classList.remove('is-error');
     vaultMessage?.classList.add('is-success');
     if (vaultMessage) {
-        vaultMessage.textContent = 'Passcode worked. Opening the closet now...';
+        vaultMessage.textContent = 'Passcode worked. Opening the closet now.';
     }
 
     vaultScreen.classList.add('is-unlocked');
