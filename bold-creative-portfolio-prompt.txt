@@ -1,0 +1,137 @@
+Completely redesign and rewrite my UI/UX portfolio. Replace everything — the design, the colors, the layout, and all the text content. Keep the same sections: Home, Work, Case Studies, About, Contact.
+
+DESIGN DIRECTION — The Bold Creative:
+
+Color palette — use these exact CSS variables:
+
+--off-white: #F8F5F0
+--cobalt: #1B4FD8
+--coral: #FF5C3A
+--black: #111111
+--sage: #7DAA92
+--muted: #888888
+--light: #E8E4DF
+
+Typography — import from Google Fonts:
+
+Playfair Display (700, 900, italic variants) for all headings and display text
+Inter (300, 400, 500, 600) for all body text
+Space Mono (400, 700) for all labels, eyebrows, numbers, and accent text
+
+Design details:
+
+Bold oversized headings that take up space confidently
+Coral used as the primary hover and accent color on interactive elements
+Cobalt blue for section headers, buttons, and key UI elements
+Sage green used sparingly for tags and secondary accents
+Space Mono labels in all caps with wide letter spacing for that techy editorial feel
+Black and white as the foundation with color used intentionally and boldly
+Project card numbers in huge Space Mono as a background element
+Buttons are bold, full color, no rounded corners — sharp and confident
+Section transitions use color blocks — alternating off white and cobalt backgrounds
+Cursor dot in coral with cobalt trailing ring
+Hover effects flip card background from dark to cobalt or coral
+Hero section has a large asymmetric layout with oversized name and a color block behind the photo
+
+Interactive features — include ALL of these:
+
+Custom coral cursor (12px filled circle) with a larger cobalt trailing ring (40px outline) that follows with a delay
+On hover over links and cards the cursor scales up and the trail changes color
+Scroll reveal animations — every section element fades up into view as the user scrolls using IntersectionObserver
+Staggered animations on page load for the hero section (eyebrow first, then name, then tagline, then buttons)
+Hover effects on project cards — overlay darkens, tags appear, scale up slightly
+Parallax depth effect on scroll using requestAnimationFrame
+Case study items expand smoothly on click to reveal full case study content
+Smooth scroll navigation
+
+Layout:
+
+Hero section is split 50/50: left side has name, tagline, and buttons; right side is a full height photo. Use id="my-photo" on both photo img tags so I can replace them easily.
+Section dividers — use the cobalt color as a thin line under section labels.
+Project cards — large magazine style grid. First card spans full width. Second and third cards are side by side. Each card has a dark gradient background with the project title, number, and tags overlaid.
+Case studies — listed vertically. Each one has a number, title, and short description. On click the full case study slides open below it smoothly. On click again it closes.
+Navigation — fixed at top with frosted glass effect (backdrop-filter blur). Logo on left, links on right.
+Footer — dark background, simple copyright and "Designed and Built in Code" on opposite sides.
+
+TEXT CONTENT:
+
+Name: Aileen Naa Ayele Aryeetey
+Email: aileenaryeetey.naa@gmail.com
+GitHub: github.com/aryeetea
+LinkedIn: linkedin.com/in/aileen-aryeetey-162033263
+Tagline: "I design experiences people feel before they understand them."
+Hero eyebrow: UI/UX Designer · Product Builder · Frontend Craft
+Summary: I am Aileen. A recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I design directly in code — what I imagine is exactly what ships, with no gap between vision and execution. Unlike most designers I can build what I design.
+Stats to show in hero: 3 Live Products Shipped · GPA 3.4 · Dean's List ×3 · Based in New Jersey
+
+PROJECT CARDS:
+
+Project 1 — Dear Stranger
+URL: dearstranger.xyz
+Tags: UI/UX Design · Full Stack · Interaction Design
+Card background: dark navy to deep purple gradient
+Description: A full stack social platform where strangers connect through intentional letter writing. I led the full UI/UX design direction — from the deep space aesthetic to the interactive star map and customizable letter editor.
+
+Project 2 — DAS Sterile Training Center
+URL: dascstraining.com
+Tags: Client Work · Web Design · UI/UX
+Card background: dark forest green gradient
+Description: A production website for a live healthcare training company. Designed for immediate trust and clear navigation — because people making career decisions need to find information fast and feel confident doing it.
+
+Project 3 — Gobɛ Hemaa
+URL: gob3hemaa.vercel.app
+Tags: E-Commerce · Full Stack · Product Design
+Card background: deep burgundy to dark brown gradient
+Description: A full stack food ordering platform built for my cousin's Ghanaian food business. Designed to feel warm and cultural while handling payments and order management without any friction.
+
+CASE STUDIES:
+
+Case Study 01 — Dear Stranger — Making vulnerability feel safe
+Role: UI/UX Designer — Class Project with Friends
+The Story: My sister moved to the United States and even though she was surrounded by people every single day she could not find a way to make real connections. Social media is performance. Messaging apps feel like tasks. Everything moves too fast. I brought this idea to my team and we aligned on one question — what would it look like to build something where slowness was the whole point?
+The Problem: There is a very specific kind of loneliness no existing platform addresses — the feeling of being somewhere new, surrounded by strangers, with no real way in. Every tool available was built for people who already have a social life.
+My Design Contributions: As the UI/UX designer on the team I was responsible for the entire visual direction and user experience. Dark void background because the universe between people should feel infinite. Gold accents because against all that darkness gold feels rare and warm. Cinzel for labels because it has a timeless almost ancient quality. Cormorant Garamond for letters because it reads like handwriting. Each user gets a unique animated hub because no one should feel like just another profile. AI generated portraits so your presence feels like yours not a placeholder.
+What Collaboration Looked Like: I led all design decisions while working closely with teammates on feature priorities and user flows. We tested the star map discovery experience together and iterated based on feedback before shipping.
+Core Flow: Discover on the star map → Visit a hub → Write a letter → Wait for a reply
+Outcome: Live at dearstranger.xyz with organic traffic from Google, Discord, and LinkedIn with zero marketing. 37 page views in the first week with real users actively creating hubs and writing letters.
+Built With: React, Next.js, TypeScript, Tailwind CSS, Framer Motion, Supabase, OpenAI API, Vercel
+
+Case Study 02 — DAS Sterile Training Center — From cluttered to clear
+Role: UI/UX Designer and Frontend Developer — Freelance Client Project
+The Story: A healthcare training company needed a website that would convince prospective students to enroll. Before designing anything I researched the industry thoroughly and studied every competitor site I could find.
+The Problem: Every sterile processing school website I found had the same problems — poor color usage, no clear sections, everything crammed onto one page with no visual hierarchy. People making career decisions need to feel confident immediately. These sites were doing the opposite.
+Research Findings: Competitor sites lacked visual hierarchy, used color inconsistently, had poor information architecture, and communicated no credibility or professionalism.
+Design Decisions: Clear distinct sections so information is easy to find. Clean typography and generous spacing to communicate professionalism. Prominent application form with autosave. Testimonial carousel for social proof. FAQ accordion to answer common questions. Google Maps embed for local trust and discoverability.
+Core Flow: Land → Learn about the program → Read testimonials → Apply
+Outcome: Live at dascstraining.com actively serving real users. Client can manage content independently through WordPress. Delivered on time and handed off cleanly.
+Built With: React, TypeScript, Tailwind CSS, React Router, Web3Forms, WordPress, Vercel
+
+Case Study 03 — Gobɛ Hemaa — Bringing a family business online
+Role: Lead UI/UX Designer — Personal Project
+The Story: My cousin in Ghana started a food business and wanted me to invest. I could not afford to invest money so I offered something better — I built her a platform. Gobɛ Hemaa means Queen of Food in Twi. Every design decision was made to honor that name.
+The Problem: My cousin had no online presence. Existing food ordering platforms in Ghana either did not support local payment methods or felt completely disconnected from Ghanaian culture. She needed something that felt like hers.
+Design Decisions: Warmth and color to reflect the culture and brand. Simple layout so ordering is fast and frictionless — cultural expression should never slow down the transaction. Designed for both success and failure states in the payment flow so no customer ever loses trust.
+Core Flow: Browse menu → Add to cart → Create account → Checkout → Confirm order
+Payment Challenge: Integrating Paystack, Flutterwave, and Hubtel to support Mobile Money and cash on delivery required designing checkout flows for each payment method's unique steps and failure scenarios.
+Outcome: Live at gob3hemaa.vercel.app. A real product built for a real business, designed with cultural intention and shipped from scratch.
+Built With: React, TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, Neon, Paystack, Flutterwave, Hubtel, Vercel
+
+ABOUT SECTION:
+
+Bio: I am Aileen — a recent Information Technology graduate from Kean University with a 3.4 GPA and a study abroad semester in Wenzhou, China. I care deeply about the details that most people skip — the micro interactions, the spacing, the moment right before something clicks. I design directly in code which means what I imagine is exactly what ships with no gap between vision and execution. Unlike most designers I can build what I design — no handoff, no gap, just the thing itself.
+Skills to show: UI/UX Design · Interaction Design · Visual Design · Responsive Design · React · Next.js · TypeScript · Tailwind · Node.js · Supabase · User Research · Competitive Analysis · Product Strategy
+Stats: Kean University · Wenzhou China · Dean's List ×3 · 3 Live Products Shipped
+
+CONTACT SECTION:
+
+Heading: Let's make something beautiful
+Subtext: I am currently open to UI/UX design roles, product design opportunities, and freelance projects. If you have something worth building let's talk.
+
+FINAL INSTRUCTIONS:
+
+Output the complete single HTML file with all CSS and JavaScript included. No external files except Google Fonts.
+Use id="my-photo" on both photo img tags (hero and about) so I can replace them with my actual photo.
+Use the attached portrait image as the photo reference.
+Make it fully responsive.
+Make it production ready and visually stunning.
+The design should feel bold, creative, graphic, confident, and intentionally high contrast.

@@ -123,10 +123,8 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-document.querySelectorAll('.profile-photo').forEach((image, index) => {
-    const fallback = index === 0
-        ? document.getElementById('heroFallback')
-        : document.getElementById('aboutFallback');
+document.querySelectorAll('.profile-photo').forEach((image) => {
+    const fallback = document.getElementById('heroFallback');
 
     image.addEventListener('error', () => {
         image.hidden = true;
@@ -157,7 +155,7 @@ document.querySelectorAll('.project-card').forEach((card) => {
 });
 
 if (!reduceMotion) {
-    const parallaxElements = document.querySelectorAll('.page-glow, .portrait-card, .about-photo-card');
+    const parallaxElements = document.querySelectorAll('.page-glow, .portrait-card');
     let ticking = false;
 
     const updateParallax = () => {
