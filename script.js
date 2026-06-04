@@ -10,6 +10,7 @@ const vaultPanel = document.getElementById('vaultPanel');
 const vaultForm = document.getElementById('vaultForm');
 const vaultInput = document.getElementById('vaultInput');
 const vaultMessage = document.getElementById('vaultMessage');
+const vaultSkipLink = document.getElementById('vaultSkipLink');
 const archiveScreen = document.getElementById('archiveScreen');
 const archiveFolders = document.querySelectorAll('.archive-folder');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -83,6 +84,20 @@ function unlockPortfolio() {
     }, reduceMotion ? 0 : 850);
 }
 
+function skipToCloset(event) {
+    event?.preventDefault();
+
+    if (!vaultScreen || !archiveScreen) {
+        window.location.href = 'index.html?closet=1';
+        return;
+    }
+
+    document.body.classList.remove('is-locked');
+    vaultScreen.hidden = true;
+    archiveScreen.hidden = false;
+    window.history.replaceState({}, '', 'index.html?closet=1');
+}
+
 function openArchiveTarget(path) {
     if (!archiveScreen || !path) {
         return;
@@ -96,6 +111,7 @@ function openArchiveTarget(path) {
 }
 
 vaultFile?.addEventListener('click', openVaultPanel);
+vaultSkipLink?.addEventListener('click', skipToCloset);
 
 vaultForm?.addEventListener('submit', (event) => {
     event.preventDefault();
