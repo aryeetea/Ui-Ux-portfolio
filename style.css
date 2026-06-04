@@ -298,6 +298,14 @@ button {
     gap: 0.9rem;
 }
 
+.vault-skip-link {
+    justify-self: center;
+    color: rgba(248, 245, 240, 0.58);
+    font-size: 0.82rem;
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+}
+
 .vault-form input {
     min-height: 3.4rem;
     padding: 0.9rem 1rem;
@@ -1930,19 +1938,11 @@ section::after {
     min-height: 100%;
 }
 
-.project-preview iframe {
-    width: 200%;
-    height: 200%;
-    border: 0;
-    transform: scale(0.5);
-    transform-origin: top left;
-    pointer-events: none;
-}
-
 .project-preview::after {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 1;
     background:
         linear-gradient(180deg, rgba(17, 17, 17, 0.04) 0%, rgba(17, 17, 17, 0.72) 100%),
         linear-gradient(135deg, rgba(27, 79, 216, 0.2), rgba(255, 92, 58, 0.16));
@@ -1963,12 +1963,32 @@ section::after {
     background: linear-gradient(135deg, #111111, #FF5C3A 58%, #1B4FD8);
 }
 
-.project-fallback {
-    display: none;
+.project-thumbnail {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-.project-fallback.show {
-    display: block;
+.project-fallback {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    color: var(--muted);
+    background: #e5e5e5;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.project-preview.image-failed .project-fallback {
+    display: flex;
 }
 
 .project-body {
@@ -2123,7 +2143,7 @@ section::after {
 }
 
 .cs-item.open .cs-panel {
-    max-height: 260rem;
+    max-height: 420rem;
 }
 
 .cs-item.open .cs-toggle {
@@ -2159,6 +2179,47 @@ section::after {
 .cs-sections {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 1.4rem;
+}
+
+.cs-media {
+    position: relative;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 28px auto;
+}
+
+.cs-media img,
+.cs-media-fallback {
+    width: 100%;
+    max-width: 800px;
+    min-height: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cs-media-fallback {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: #e5e5e5;
+    color: var(--muted);
+    text-align: center;
+}
+
+.cs-media.image-failed .cs-media-fallback {
+    display: flex;
+}
+
+.cs-media figcaption {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-style: italic;
+    text-align: center;
 }
 
 .cs-block {
