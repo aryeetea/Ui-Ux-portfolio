@@ -21,6 +21,7 @@ if (vaultScreen) {
 }
 
 if (showClosetDirectly && vaultScreen && archiveScreen) {
+    document.body.classList.remove('is-locked');
     vaultScreen.hidden = true;
     archiveScreen.hidden = false;
 }
@@ -67,6 +68,7 @@ function unlockPortfolio() {
         return;
     }
 
+    document.body.classList.remove('is-locked');
     vaultMessage?.classList.remove('is-error');
     vaultMessage?.classList.add('is-success');
     if (vaultMessage) {
