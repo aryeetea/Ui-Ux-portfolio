@@ -2240,6 +2240,9 @@ section::after {
     display: grid;
     gap: 1rem;
     align-content: start;
+    position: sticky;
+    top: 5rem;
+    align-self: start;
 }
 
 .cs-aside-card {
