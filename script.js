@@ -6,26 +6,27 @@ const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
 const vaultScreen = document.getElementById('vaultScreen');
 const vaultFile = document.getElementById('vaultFile');
-const vaultPanel = document.getElementById('vaultPanel');
-const vaultForm = document.getElementById('vaultForm');
-const vaultInput = document.getElementById('vaultInput');
-const vaultMessage = document.getElementById('vaultMessage');
-const vaultSkipLink = document.getElementById('vaultSkipLink');
-const vaultRevealPasscode = document.getElementById('vaultRevealPasscode');
 const archiveScreen = document.getElementById('archiveScreen');
 const archiveFolders = document.querySelectorAll('.archive-folder');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const portfolioPasscode = 'AILEEN';
 const showClosetDirectly = new URLSearchParams(window.location.search).get('closet') === '1';
 
 if (vaultScreen) {
     document.body.classList.add('is-locked');
 }
 
-if (showClosetDirectly && vaultScreen && archiveScreen) {
+function showCloset() {
+    if (!vaultScreen || !archiveScreen) {
+        return;
+    }
+
     document.body.classList.remove('is-locked');
     vaultScreen.hidden = true;
     archiveScreen.hidden = false;
+}
+
+if (showClosetDirectly && vaultScreen && archiveScreen) {
+    showCloset();
 }
 
 if (nav) {
@@ -51,55 +52,13 @@ function closeMobileNav() {
 ham?.addEventListener('click', toggleMobileNav);
 mobileNavLinks.forEach((link) => link.addEventListener('click', closeMobileNav));
 
-function openVaultPanel() {
-    if (!vaultPanel || !vaultFile) {
-        return;
-    }
-
-    vaultPanel.hidden = false;
-    requestAnimationFrame(() => {
-        vaultPanel.classList.add('is-visible');
-        vaultFile.classList.add('is-active');
-        vaultFile.setAttribute('aria-expanded', 'true');
-        vaultInput?.focus();
-    });
-}
-
 function enterPortfolio() {
-    window.location.href = 'index.html?closet=1';
-}
-
-function unlockPortfolio() {
-    if (!vaultScreen || !archiveScreen) {
-        return;
-    }
-
-    document.body.classList.remove('is-locked');
-    vaultMessage?.classList.remove('is-error');
-    vaultMessage?.classList.add('is-success');
-    if (vaultMessage) {
-        vaultMessage.textContent = 'Passcode worked. Opening the closet now.';
-    }
-
-    vaultScreen.classList.add('is-unlocked');
-
-    window.setTimeout(() => {
-        vaultScreen.hidden = true;
-        archiveScreen.hidden = false;
-    }, reduceMotion ? 0 : 850);
-}
-
-function skipToCloset(event) {
-    event?.preventDefault();
-
     if (!vaultScreen || !archiveScreen) {
         window.location.href = 'index.html?closet=1';
         return;
     }
 
-    document.body.classList.remove('is-locked');
-    vaultScreen.hidden = true;
-    archiveScreen.hidden = false;
+    showCloset();
     window.history.replaceState({}, '', 'index.html?closet=1');
 }
 
@@ -116,33 +75,8 @@ function openArchiveTarget(path) {
 }
 
 vaultFile?.addEventListener('click', (event) => {
-    if (vaultFile.tagName === 'A') {
-        return;
-    }
-
     event.preventDefault();
     enterPortfolio();
-});
-vaultRevealPasscode?.addEventListener('click', openVaultPanel);
-vaultSkipLink?.addEventListener('click', skipToCloset);
-
-vaultForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const submitted = vaultInput?.value.trim().toUpperCase() ?? '';
-
-    if (submitted === portfolioPasscode) {
-        unlockPortfolio();
-        return;
-    }
-
-    if (vaultMessage) {
-        vaultMessage.textContent = 'That is not it. Try Aileen\'s first name.';
-        vaultMessage.classList.remove('is-success');
-        vaultMessage.classList.add('is-error');
-    }
-
-    vaultInput?.select();
 });
 
 archiveFolders.forEach((folder) => {
