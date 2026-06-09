@@ -115,7 +115,14 @@ function openArchiveTarget(path) {
     }, reduceMotion ? 0 : 700);
 }
 
-vaultFile?.addEventListener('click', enterPortfolio);
+vaultFile?.addEventListener('click', (event) => {
+    if (vaultFile.tagName === 'A') {
+        return;
+    }
+
+    event.preventDefault();
+    enterPortfolio();
+});
 vaultRevealPasscode?.addEventListener('click', openVaultPanel);
 vaultSkipLink?.addEventListener('click', skipToCloset);
 
