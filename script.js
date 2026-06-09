@@ -66,15 +66,7 @@ function openVaultPanel() {
 }
 
 function enterPortfolio() {
-    if (!vaultScreen || !archiveScreen) {
-        window.location.href = 'index.html?closet=1';
-        return;
-    }
-
-    document.body.classList.remove('is-locked');
-    vaultScreen.hidden = true;
-    archiveScreen.hidden = false;
-    window.history.replaceState({}, '', 'index.html?closet=1');
+    window.location.href = 'index.html?closet=1';
 }
 
 function unlockPortfolio() {
