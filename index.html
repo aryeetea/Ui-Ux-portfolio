@@ -13,27 +13,28 @@
 <div class="vault-screen" id="vaultScreen" aria-live="polite">
     <div class="vault-backdrop"></div>
     <div class="vault-shell">
-        <button type="button" class="vault-file" id="vaultFile" aria-controls="vaultPanel" aria-expanded="false">
+        <button type="button" class="vault-file" id="vaultFile">
             <span class="vault-file-tab">portfolio.secure</span>
             <span class="vault-file-icon" aria-hidden="true"></span>
-            <strong>Open Aileen's Portfolio</strong>
-            <span>Private access</span>
+            <strong>Enter Aileen's Portfolio</strong>
+            <span>No passcode required</span>
         </button>
+        <button type="button" class="vault-skip-link" id="vaultRevealPasscode">Use passcode version instead</button>
 
         <div class="vault-panel" id="vaultPanel" hidden>
             <div class="vault-panel-top">
-                <span>Access Required</span>
+                <span>Optional Passcode</span>
                 <span>passcode://</span>
             </div>
-            <h2>Type the passcode to open my portfolio.</h2>
-            <p>Hint: use my first name.</p>
+            <h2>The passcode is now optional.</h2>
+            <p>If you want the original concept, type my first name below. Otherwise, use the main button and go straight in.</p>
             <form class="vault-form" id="vaultForm">
                 <label class="sr-only" for="vaultInput">Passcode</label>
                 <input id="vaultInput" name="passcode" type="password" inputmode="text" autocomplete="off" placeholder="Enter passcode">
                 <button type="submit" class="btn btn-primary">Open Portfolio</button>
             </form>
-            <a href="index.html?closet=1" class="vault-skip-link" id="vaultSkipLink">Skip passcode</a>
-            <p class="vault-message" id="vaultMessage">Click the file, type the passcode, and you're in.</p>
+            <a href="index.html?closet=1" class="vault-skip-link" id="vaultSkipLink">Go straight to the work</a>
+            <p class="vault-message" id="vaultMessage">The passcode is an easter egg now, not a gate.</p>
         </div>
     </div>
 </div>

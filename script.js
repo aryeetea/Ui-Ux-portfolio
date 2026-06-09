@@ -11,6 +11,7 @@ const vaultForm = document.getElementById('vaultForm');
 const vaultInput = document.getElementById('vaultInput');
 const vaultMessage = document.getElementById('vaultMessage');
 const vaultSkipLink = document.getElementById('vaultSkipLink');
+const vaultRevealPasscode = document.getElementById('vaultRevealPasscode');
 const archiveScreen = document.getElementById('archiveScreen');
 const archiveFolders = document.querySelectorAll('.archive-folder');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -64,6 +65,18 @@ function openVaultPanel() {
     });
 }
 
+function enterPortfolio() {
+    if (!vaultScreen || !archiveScreen) {
+        window.location.href = 'index.html?closet=1';
+        return;
+    }
+
+    document.body.classList.remove('is-locked');
+    vaultScreen.hidden = true;
+    archiveScreen.hidden = false;
+    window.history.replaceState({}, '', 'index.html?closet=1');
+}
+
 function unlockPortfolio() {
     if (!vaultScreen || !archiveScreen) {
         return;
@@ -110,7 +123,8 @@ function openArchiveTarget(path) {
     }, reduceMotion ? 0 : 700);
 }
 
-vaultFile?.addEventListener('click', openVaultPanel);
+vaultFile?.addEventListener('click', enterPortfolio);
+vaultRevealPasscode?.addEventListener('click', openVaultPanel);
 vaultSkipLink?.addEventListener('click', skipToCloset);
 
 vaultForm?.addEventListener('submit', (event) => {
