@@ -21,8 +21,8 @@ function showCloset() {
     }
 
     document.body.classList.remove('is-locked');
-    vaultScreen.hidden = true;
-    archiveScreen.hidden = false;
+    vaultScreen.classList.add('is-unlocked');
+    archiveScreen.classList.remove('is-hidden');
 }
 
 if (showClosetDirectly && vaultScreen && archiveScreen) {
